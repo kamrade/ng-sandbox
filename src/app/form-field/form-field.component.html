@@ -1,0 +1,19 @@
+<div class="form-field-control" [class.has-error]="!!message">
+
+  <label [for]="inputId" *ngIf="label">
+    {{label}}
+  </label>
+  <input
+    type="text"
+    [id]="inputId"
+    class="form-control"
+    [placeholder]="placeholder"
+    [(ngModel)]="inputValue"
+    (keyup)="onKeyUp()"
+    (keydown)="onKeyDown()"
+  />
+  <div class="message">
+    <p class="message-text">{{message}}</p>
+  </div>
+
+</div>

@@ -1,0 +1,57 @@
+<div class="contact-form">
+
+  <app-form-title
+    formTitleText="Contact form"
+  ></app-form-title>
+
+  <form>
+    
+    <section class="row mb-3">
+
+      <div class="col-md-3 col-lg-2">
+        <label [ngStyle]="{'margin-top.px': 8}" for="first_name" class="form-label">First name*</label>
+      </div>
+
+      <div class="col-md-5">
+        <div class="form-field-control" [class.has-error]="firstName.touched && !firstName.valid">
+          <input
+            (focus)="onFocus()"
+            (focus)="onBlur()"
+            required
+            minlength="3"
+            maxlength="10"
+            pattern="banana"
+            ngModel name="firstName" #firstName="ngModel"
+            (change)="log(firstName)" 
+            type="text" 
+            id="first_name" 
+            class="form-control"
+          >
+          <div *ngIf="firstName.touched && !firstName.valid" class="message">
+            <span *ngIf="firstName.errors.required" class="message-text">First name is required. </span>
+            <span *ngIf="firstName.errors.minlength" class="message-text">First name should be minimum {{ firstName.errors.minlength.requiredLength}} characters. </span>
+            <span *ngIf="firstName.errors.pattern" class="message-text">First name does not match the pattern. </span>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <section class="row mb-3">
+
+      <div class="col-md-3 col-lg-2">
+        <label [ngStyle]="{'margin-top.px': 8}" for="comment" class="form-label">Comment</label>
+      </div>
+
+      <div class="col-md-5">
+        <div class="form-field-control">
+          <textarea ngModel name="comment"  cols="30" rows="10" type="text" id="comment" class="form-control"></textarea>
+        </div>
+      </div>
+
+    </section>
+
+    <button class="btn btn-primary">Submit</button>
+
+  </form>
+</div>

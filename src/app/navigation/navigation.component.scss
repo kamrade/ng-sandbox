@@ -1,0 +1,11 @@
+@import "variables";
+
+.navigation {
+  a, a:link, a:visited {
+    color: $gray-600;
+
+    &.active-link {
+      color: $gray-900;
+    }
+  }
+}

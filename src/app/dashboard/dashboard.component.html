@@ -1,0 +1,54 @@
+<div class="dashboard pt-3">
+
+  <app-form-title
+    formTitleText="Website URLs"
+  ></app-form-title>
+
+  <div class="form-content mb-5">
+    
+    <section class="row">
+      <div class="col-md-3">
+        <h6 [ngStyle]="{'margin-top.px': 8}" class="form-sub-title">Redirect URLs for cardholders</h6>
+      </div>
+      <div class="col-md-3 col-lg-2">
+        <label [ngStyle]="{'margin-top.px': 8}" for="success_page" class="form-label">Success page</label>
+      </div>
+      <div class="col-md-5">
+        <app-form-field
+          placeholder="Success page website URL"
+          inputId="success_page"
+          message="Validation message text"
+        ></app-form-field>
+      </div>
+    </section>
+    
+    <section class="row">
+      <div class="col-md-3"></div>
+      <div class="col-md-3 col-lg-2">
+        <label [ngStyle]="{'margin-top.px': 8}" for="decline_page" class="form-label">Decline page</label>
+      </div>
+      <div class="col-md-5">
+        <app-form-field
+          placeholder="Decline page website URL"
+          inputId="decline_page"
+        ></app-form-field>
+      </div>
+    </section>
+    
+    <section class="row">
+      <div class="col-md-3"></div>
+      <div class="col-md-3 col-lg-2">
+        <label [ngStyle]="{'margin-top.px': 8}" for="cancel_page" class="form-label">Cancel page</label>
+      </div>
+      <div class="col-md-5">
+        <app-form-field
+          placeholder="Cancel page website URL"
+          inputId="cancel_page"
+        ></app-form-field>
+      </div>
+    </section>
+
+    <app-form-divider></app-form-divider>
+
+  </div>
+</div>

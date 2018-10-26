@@ -1,0 +1,36 @@
+$white:    #fff;
+$gray-100: #EDF1F6;
+$gray-300: #D7DBE2;
+$gray-500: #A5AEB8;
+$gray-600: #6C7279;
+$gray-900: #1E1F21;
+$black:    #000;
+
+$blue:    #0078FF;
+$green:   #00B300;
+$red:     #FF0000;
+$orange:  #FFB016;
+$cyan:    #6DB2FF;
+
+$spacer: 1.25rem; // (20px)
+$spacers: ();
+$spacers: map-merge(
+  (
+    0: 0,
+    1: ($spacer * .25),
+    2: ($spacer * .5),
+    3: $spacer,
+    4: ($spacer * 1.5),
+    5: ($spacer * 2),
+    6: ($spacer * 3),
+    7: ($spacer * 4),
+    8: ($spacer * 5),
+    9: ($spacer * 6),
+  ),
+  $spacers
+);
+
+$grid-gutter-width: 20px;
+
+// $font-family-monospace: 'Roboto Mono', monospace;
+// $font-family-base: $font-family-monospace;
