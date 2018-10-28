@@ -1,0 +1,15 @@
+<div class="mb-5">
+  <button class="btn btn-primary" (click)="toggleTemplateSelected()">Toggle View/Content</button>
+</div>
+
+<p>
+  Showing
+  <span class="view-type" *ngIf="showViewTemplate">View</span>
+  <span class="view-type" *ngIf="!showTemplate">Content</span>
+</p>
+
+<ng-container *ngTemplateOutlet='liveTemplate'></ng-container>
+
+<ng-template #view>
+  This is "view" content - from inside the child component's template and queried with @ViewChild
+</ng-template>

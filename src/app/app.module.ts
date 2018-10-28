@@ -19,6 +19,8 @@ import { PaywallDirectiveWidgetComponent } from './pages/setting/paywall-directi
 import { PaywallDirective } from './paywall.directive';
 import { TemplaterefSelectorComponent } from './pages/templateref-selector/templateref-selector.component';
 import { TemplaterefChildComponent } from './pages/templateref-selector/templateref-child/templateref-child.component';
+import { QueryDecoratorComponent } from './pages/query-decorator/query-decorator.component';
+import { ToggleViewContentComponent } from './pages/query-decorator/toggle-view-content/toggle-view-content.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +38,9 @@ import { TemplaterefChildComponent } from './pages/templateref-selector/template
     PaywallDirectiveWidgetComponent,
     PaywallDirective,
     TemplaterefSelectorComponent,
-    TemplaterefChildComponent
+    TemplaterefChildComponent,
+    QueryDecoratorComponent,
+    ToggleViewContentComponent
   ],
   imports: [
     BrowserModule,

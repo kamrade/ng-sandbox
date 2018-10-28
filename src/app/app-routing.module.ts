@@ -5,6 +5,7 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { SettingComponent } from './pages/setting/setting.component';
 import { ContactFormComponent } from './pages/contact-form/contact-form.component';
 import { TemplaterefSelectorComponent } from './pages/templateref-selector/templateref-selector.component';
+import { QueryDecoratorComponent } from './pages/query-decorator/query-decorator.component';
 
 const routes: Routes = [{
   path: '',
@@ -22,6 +23,9 @@ const routes: Routes = [{
 }, {
   path: 'templates',
   component: TemplaterefSelectorComponent
+}, {
+  path: 'query-decorator',
+  component: QueryDecoratorComponent
 }];
 
 @NgModule({
