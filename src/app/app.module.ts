@@ -1,17 +1,24 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
 import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { FormFieldComponent } from './form-field/form-field.component';
-
 import { FormsModule } from '@angular/forms';
-import { NavigationComponent } from './navigation/navigation.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { SettingComponent } from './setting/setting.component';
-import { FormTitleComponent } from './form-title/form-title.component';
-import { FormDividerComponent } from './form-divider/form-divider.component';
-import { ContactFormComponent } from './contact-form/contact-form.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import { AppComponent } from './app.component';
+import { FormFieldComponent } from './shared/form-field/form-field.component';
+import { NavigationComponent } from './shared/navigation/navigation.component';
+import { DashboardComponent } from './pages/dashboard/dashboard.component';
+import { SettingComponent } from './pages/setting/setting.component';
+import { FormTitleComponent } from './shared/form-title/form-title.component';
+import { FormDividerComponent } from './shared/form-divider/form-divider.component';
+import { ContactFormComponent } from './pages/contact-form/contact-form.component';
+import { OpenCloseComponent } from './pages/setting/open-close/open-close.component';
+import { OutputDecoratorWidgetComponent } from './pages/setting/output-decorator-widget/output-decorator-widget.component';
+import { HelpBannerComponent } from './pages/setting/help-banner/help-banner.component';
+import { PaywallDirectiveWidgetComponent } from './pages/setting/paywall-directive-widget/paywall-directive-widget.component';
+import { PaywallDirective } from './paywall.directive';
+import { TemplaterefSelectorComponent } from './pages/templateref-selector/templateref-selector.component';
+import { TemplaterefChildComponent } from './pages/templateref-selector/templateref-child/templateref-child.component';
 
 @NgModule({
   declarations: [
@@ -22,10 +29,18 @@ import { ContactFormComponent } from './contact-form/contact-form.component';
     SettingComponent,
     FormTitleComponent,
     FormDividerComponent,
-    ContactFormComponent
+    ContactFormComponent,
+    OpenCloseComponent,
+    OutputDecoratorWidgetComponent,
+    HelpBannerComponent,
+    PaywallDirectiveWidgetComponent,
+    PaywallDirective,
+    TemplaterefSelectorComponent,
+    TemplaterefChildComponent
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     FormsModule,
     AppRoutingModule
   ],

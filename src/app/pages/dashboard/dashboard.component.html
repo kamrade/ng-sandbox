@@ -5,7 +5,7 @@
   ></app-form-title>
 
   <div class="form-content mb-5">
-    
+
     <section class="row">
       <div class="col-md-3">
         <h6 [ngStyle]="{'margin-top.px': 8}" class="form-sub-title">Redirect URLs for cardholders</h6>
@@ -15,13 +15,13 @@
       </div>
       <div class="col-md-5">
         <app-form-field
-          placeholder="Success page website URL"
-          inputId="success_page"
-          message="Validation message text"
+          [placeholder]="'Success page website URL'"
+          [inputId]="'success_page'"
+          [message]="'Validation message text'"
         ></app-form-field>
       </div>
     </section>
-    
+
     <section class="row">
       <div class="col-md-3"></div>
       <div class="col-md-3 col-lg-2">
@@ -29,12 +29,12 @@
       </div>
       <div class="col-md-5">
         <app-form-field
-          placeholder="Decline page website URL"
-          inputId="decline_page"
+          [placeholder]="'Decline page website URL'"
+          [inputId]="'decline_page'"
         ></app-form-field>
       </div>
     </section>
-    
+
     <section class="row">
       <div class="col-md-3"></div>
       <div class="col-md-3 col-lg-2">
@@ -42,8 +42,8 @@
       </div>
       <div class="col-md-5">
         <app-form-field
-          placeholder="Cancel page website URL"
-          inputId="cancel_page"
+          [placeholder]="'Cancel page website URL'"
+          [inputId]="'cancel_page'"
         ></app-form-field>
       </div>
     </section>

@@ -1,9 +1,10 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { SettingComponent } from './setting/setting.component';
-import { ContactFormComponent } from './contact-form/contact-form.component';
+import { DashboardComponent } from './pages/dashboard/dashboard.component';
+import { SettingComponent } from './pages/setting/setting.component';
+import { ContactFormComponent } from './pages/contact-form/contact-form.component';
+import { TemplaterefSelectorComponent } from './pages/templateref-selector/templateref-selector.component';
 
 const routes: Routes = [{
   path: '',
@@ -18,6 +19,9 @@ const routes: Routes = [{
 }, {
   path: 'contact',
   component: ContactFormComponent
+}, {
+  path: 'templates',
+  component: TemplaterefSelectorComponent
 }];
 
 @NgModule({

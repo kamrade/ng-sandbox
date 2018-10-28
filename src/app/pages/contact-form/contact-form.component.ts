@@ -1,0 +1,59 @@
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-contact-form',
+  templateUrl: './contact-form.component.html',
+  styleUrls: ['./contact-form.component.scss']
+})
+
+export class ContactFormComponent {
+
+  focused = false;
+
+  constructor() {}
+
+  onFocus() {
+    this.focused = true;
+  }
+
+  onBlur() {
+    this.focused = false;
+  }
+
+  log(x) {
+    console.log(x);
+  }
+
+  test() {
+    console.log(':: test starts');
+
+    let user: any = {
+      firstName: 'Dan',
+      lastName: 'Brown'
+    }
+
+    Object.defineProperty(user, 'fullName', {
+      get: function() {
+        return `${this.firstName} ${this.lastName}`;
+      },
+      set: function(value) {
+        let split = value.split(' ');
+        this.firstName = split[0];
+        this.lastName = split[1];
+      }
+    });
+
+    console.log(user.fullName);
+    console.log(user.firstName);
+    console.log(user.lastName);
+
+    user.fullName = 'Dennis Michailov';
+
+    console.log(':: change');
+    console.log(user.fullName);
+    console.log(user.firstName);
+    console.log(user.lastName);
+
+  }
+
+}

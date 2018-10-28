@@ -1,0 +1,13 @@
+<app-form-title
+  formTitleText='Open close animation'
+></app-form-title>
+
+<div
+  (click)="toggle()"
+  (mouseenter)="onMouseenter()"
+  (mouseleave)="onMouseleave()"
+  [@darkLight]="isHover ? 'dark' : 'light'"
+  [@openClose]="isOpen ? 'open' : 'closed'"
+  class="open-close-container">
+  <p>The box is now {{ isOpen ? 'open' : 'closed' }}!</p>
+</div>
