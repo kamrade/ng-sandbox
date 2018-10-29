@@ -12,7 +12,8 @@
     (keyup)="onKeyUp()"
     (keydown)="onKeyDown()"
   />
-  <div class="message">
+
+  <div *ngIf="!!message" @enterLeaveAnimation class="message">
     <p class="message-text">{{message}}</p>
   </div>
 

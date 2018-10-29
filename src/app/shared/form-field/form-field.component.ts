@@ -1,7 +1,9 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { EnterLeaveAnimation } from 'src/app/animations/';
 
 @Component({
   selector: 'app-form-field',
+  animations: EnterLeaveAnimation.animations,
   templateUrl: './form-field.component.html',
   styleUrls: ['./form-field.component.scss']
 })
