@@ -2,10 +2,21 @@
 
 .header {
   background-color: $white;
-  padding: $spacer / 2;
+  padding: $spacer/2 $spacer*2;
   border-bottom: 1px solid $gray-300;
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 
+  .header-content {
+    display: flex;
+    align-items: center;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  .menu-toggler-wrapper {
+    margin-right: $spacer;
+    cursor: pointer;
+  }
 
   h1 {
     font-size: 30px;
