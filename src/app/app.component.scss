@@ -1,7 +1,9 @@
 @import "variables";
 
-.sidebar {
-  padding: $spacer;
+.container-app {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
 }
 
 .workspace {

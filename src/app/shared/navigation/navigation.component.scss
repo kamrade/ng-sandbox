@@ -3,6 +3,10 @@
 .navigation {
   padding-top: $spacer;
 
+  .sidebar {
+    padding: $spacer;
+  }
+
   a, a:link, a:visited {
     color: $gray-600;
     display: block;

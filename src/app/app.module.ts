@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { IconsModule } from './icons/icons.module';
 
 import { AppComponent } from './app.component';
 import { FormFieldComponent } from './shared/form-field/form-field.component';
@@ -21,6 +22,7 @@ import { TemplaterefSelectorComponent } from './pages/templateref-selector/templ
 import { TemplaterefChildComponent } from './pages/templateref-selector/templateref-child/templateref-child.component';
 import { QueryDecoratorComponent } from './pages/query-decorator/query-decorator.component';
 import { ToggleViewContentComponent } from './pages/query-decorator/toggle-view-content/toggle-view-content.component';
+import { HeaderComponent } from './shared/header/header.component';
 
 @NgModule({
   declarations: [
@@ -40,13 +42,15 @@ import { ToggleViewContentComponent } from './pages/query-decorator/toggle-view-
     TemplaterefSelectorComponent,
     TemplaterefChildComponent,
     QueryDecoratorComponent,
-    ToggleViewContentComponent
+    ToggleViewContentComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    IconsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
