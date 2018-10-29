@@ -1,8 +1,12 @@
 @import "variables";
 
 .navigation {
+  padding-top: $spacer;
+
   a, a:link, a:visited {
     color: $gray-600;
+    display: block;
+    padding: $spacer/4 0;
 
     &.active-link {
       color: $gray-900;
