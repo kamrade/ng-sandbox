@@ -1,9 +1,11 @@
-<app-form-title
-  formTitleText='Paywall directive'
-></app-form-title>
+<div class="paywall-directive">
+  <app-form-title
+    formTitleText='Paywall directive'
+  ></app-form-title>
 
-<ul>
-  <li class="link" *ngFor="let item of linkList">
-    <a href="#" appPaywall [requiredText]="'[$]'" [requiredLicense]="item.licenseLevel">{{item.title}}</a>
-  </li>
-</ul>
+  <ul class="paywall-directive-list">
+    <li class="link" *ngFor="let item of linkList">
+      <a href="#" appPaywall [requiredText]="'[$]'" [requiredLicense]="item.licenseLevel">{{item.title}}</a>
+    </li>
+  </ul>
+</div>

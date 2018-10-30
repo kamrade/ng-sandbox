@@ -16,7 +16,7 @@ export class SidebarAnimation {
       */
       trigger('sidebarSlideAnimation', [
         state('open', style({
-          width: '300px'
+          width: '240px'
         })),
         state('closed', style({
           width: 0
@@ -25,10 +25,10 @@ export class SidebarAnimation {
           query('@sidebarFadeAnimation', [
             animateChild()
           ]),
-          animate('.25s cubic-bezier(.2,.41,.47,.82)'),
+          animate('.15s cubic-bezier(.2,.41,.47,.82)'),
         ]),
         transition('closed => open', [
-          animate('.25s cubic-bezier(.2,.41,.47,.82)'),
+          animate('.15s cubic-bezier(.2,.41,.47,.82)'),
           query('@sidebarFadeAnimation', [
             animateChild()
           ])
@@ -38,11 +38,11 @@ export class SidebarAnimation {
       trigger('sidebarFadeAnimation', [
         transition(':enter', [
           style({ transform: 'translateX(-40px)', opacity: 0 }),
-          animate('.1s', style({ transform: 'translateX(0)', opacity: 1 }))
+          animate('.15s cubic-bezier(0.35, 0, 0.25, 1)', style({ transform: 'translateX(0)', opacity: 1 }))
         ]),
         transition(':leave', [
           style({ transform: 'translateX(0)', opacity: 1 }),
-          animate('.1s', style({ transform: 'translateX(-40px)', opacity: 0 }))
+          animate('.15s cubic-bezier(0.35, 0, 0.25, 1)', style({ transform: 'translateX(-40px)', opacity: 0 }))
         ])
       ])
     ]

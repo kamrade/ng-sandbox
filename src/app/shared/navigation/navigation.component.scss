@@ -1,17 +1,18 @@
 @import "variables";
+@import "mixins";
 
 .sidebar {
   padding-top: $spacer;
   padding-right: $spacer;
-  width: 300px;
+  width: 240px;
 
   a, a:link, a:visited {
-    // color: $gray-600;
     display: block;
     padding: $spacer/4 0;
 
     &.active-link {
       color: $primary;
+      font-weight: bold;
     }
   }
 }

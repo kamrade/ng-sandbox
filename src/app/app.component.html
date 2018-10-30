@@ -1,9 +1,17 @@
-<app-header (toggle)="toggleSidebar()"></app-header>
+<app-header [showSidebar]="showSidebar" (toggle)="toggleSidebar()"></app-header>
 
 <div class="container">
   <div class="container-app">
-    <div [@sidebarSlideAnimation]="showSidebar ? 'open' : 'closed'" class="navigation-container">
+
+    <div *ngIf="hiddenSidebar" [@sidebarSlideAnimation]="showSidebar ? 'open' : 'closed'" class="navigation-container">
       <div *ngIf="showSidebar" [@sidebarFadeAnimation] class="navigation-wrapper">
+        <app-navigation></app-navigation>
+      </div>
+    </div>
+
+    <div *ngIf="!hiddenSidebar" class="navigation-container navigation-container-sticky">
+      <div *ngIf="showSidebar" class="navigation-wrapper">
+        <button (click)="toggleSidebar()">Hide</button>
         <app-navigation></app-navigation>
       </div>
     </div>

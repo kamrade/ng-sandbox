@@ -2,7 +2,7 @@
   <div class="container">
     <div class="header-content">
       <div (click)="toggleMenu()" class="menu-toggler-wrapper">
-        <i-menu></i-menu>
+        <i-menu [class.menu-active]="!showSidebar"></i-menu>
       </div>
       <h1>Workspace</h1>
     </div>
