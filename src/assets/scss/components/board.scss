@@ -1,4 +1,6 @@
 .board {
   background-color: $white;
   padding: $spacer;
+  border-radius: $border-radius;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1), 0 0 16px rgba(0,0,0,0.15);
 }

@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
-import { SlideInLeftAnimation } from 'src/app/animations/';
+import { SidebarAnimation } from 'src/app/animations/';
 
 @Component({
   selector: 'app-root',
-  animations: SlideInLeftAnimation.animations,
+  animations: SidebarAnimation.animations,
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
