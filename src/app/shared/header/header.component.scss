@@ -1,10 +1,15 @@
 @import "variables";
+@import "mixins";
 
 .header {
   background-color: $white;
   padding: $spacer/2 $spacer*2;
   border-bottom: 1px solid $gray-300;
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+
+  @include media-max-width(md) {
+    padding: $spacer/2 $spacer;
+  }
 
   .header-content {
     display: flex;
@@ -16,6 +21,16 @@
   .menu-toggler-wrapper {
     margin-right: $spacer;
     cursor: pointer;
+    height: $spacer*2;
+    width: $spacer*2;
+    padding: 6px;
+    background-color: $white;
+    text-align: center;
+    transition: all .25s ease-in-out;
+
+    &:hover {
+      background-color: $gray-100;
+    }
   }
 
   h1 {

@@ -1,12 +1,31 @@
 @import "variables";
+@import "mixins";
 
 .container-app {
   width: 100%;
   max-width: 1400px;
   margin: 0 auto;
-}
+  padding-top: $spacer/2;
+  display: flex;
 
-.workspace {
-  background-color: $white;
-  padding: $spacer;
+  @include media-max-width(md) {
+    padding: $spacer/2 $spacer;
+  }
+
+  .navigation-wrapper {
+    width: 300px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .workspace {
+    position: relative;
+    flex-grow: 1;
+  }
+
+  .additional-sidebar {
+    width: 220px;
+    position: relative;
+  }
+
 }

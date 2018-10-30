@@ -1,19 +1,17 @@
 @import "variables";
 
-.navigation {
+.sidebar {
   padding-top: $spacer;
-
-  .sidebar {
-    padding: $spacer;
-  }
+  padding-right: $spacer;
+  width: 300px;
 
   a, a:link, a:visited {
-    color: $gray-600;
+    // color: $gray-600;
     display: block;
     padding: $spacer/4 0;
 
     &.active-link {
-      color: $gray-900;
+      color: $primary;
     }
   }
 }

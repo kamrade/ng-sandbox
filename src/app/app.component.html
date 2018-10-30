@@ -1,18 +1,13 @@
-<app-header></app-header>
+<app-header (toggle)="toggleSidebar()"></app-header>
 
 <div class="container-app">
-  <div class="row">
-    <div class="col-md-2">
-
-      <app-navigation></app-navigation>
-
-    </div>
-    <div class="col-md-10">
-
-      <div class="workspace">
-        <router-outlet></router-outlet>
-      </div>
-
-    </div>
+  <div *ngIf="showSidebar" @slideInLeftAnimation class="navigation-wrapper">
+    <app-navigation></app-navigation>
+  </div>
+  <div class="workspace">
+    <router-outlet></router-outlet>
+  </div>
+  <div *ngIf="showAdditionalSidebar" class="additional-sidebar">
+    Add Sidebar
   </div>
 </div>

@@ -31,7 +31,8 @@
             ],
             "stylePreprocessorOptions": {
               "includePaths": [
-                "src/assets/scss/bootstrap/"
+                "src/assets/scss/bootstrap/",
+                "src/assets/scss/base/"
               ]
             },
             "scripts": []
