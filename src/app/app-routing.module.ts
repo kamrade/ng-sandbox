@@ -6,6 +6,7 @@ import { SettingComponent } from './pages/setting/setting.component';
 import { ContactFormComponent } from './pages/contact-form/contact-form.component';
 import { TemplaterefSelectorComponent } from './pages/templateref-selector/templateref-selector.component';
 import { QueryDecoratorComponent } from './pages/query-decorator/query-decorator.component';
+import { ViewContainerRefComponent } from './pages/view-container-ref/view-container-ref.component';
 
 const routes: Routes = [{
   path: '',
@@ -26,6 +27,9 @@ const routes: Routes = [{
 }, {
   path: 'query-decorator',
   component: QueryDecoratorComponent
+}, {
+  path: 'view-container-ref',
+  component: ViewContainerRefComponent
 }];
 
 @NgModule({

@@ -23,6 +23,7 @@ import { TemplaterefChildComponent } from './pages/templateref-selector/template
 import { QueryDecoratorComponent } from './pages/query-decorator/query-decorator.component';
 import { ToggleViewContentComponent } from './pages/query-decorator/toggle-view-content/toggle-view-content.component';
 import { HeaderComponent } from './shared/header/header.component';
+import { ViewContainerRefComponent } from './pages/view-container-ref/view-container-ref.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import { HeaderComponent } from './shared/header/header.component';
     TemplaterefChildComponent,
     QueryDecoratorComponent,
     ToggleViewContentComponent,
-    HeaderComponent
+    HeaderComponent,
+    ViewContainerRefComponent
   ],
   imports: [
     BrowserModule,

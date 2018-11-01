@@ -1,0 +1,19 @@
+<div class="board">
+  <app-form-title
+    [formTitleText]="widgetTitle"
+  ></app-form-title>
+
+  <button (click)="addTemplate1()" class="btn btn-primary">Add Template1</button>{{' '}}
+  <button (click)="addTemplate2()" class="btn btn-primary">Add Template2</button>{{' '}}
+  <button [disabled]="vcr1IsEmpty()" (click)="clearVCR1()" class="btn btn-primary">Clear VCR1</button>{{' '}}
+  <button [disabled]="vcr2IsEmpty()" (click)="clearVCR2()" class="btn btn-primary">Clear VCR2</button>{{' '}}
+
+  <app-form-divider></app-form-divider>
+  <div #vcr1></div>
+  <app-form-divider></app-form-divider>
+  <div #vcr2></div>
+</div>
+
+<ng-template #t1>Template 1<br /></ng-template>
+<ng-template #t2>Template 2<br /></ng-template>
+<ng-template #t3>Template 3<br /></ng-template>
