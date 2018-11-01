@@ -1,5 +1,7 @@
 import { Component, ViewChild, ElementRef, OnInit } from '@angular/core';
 
+import { FormTitleComponent } from '../../shared/form-title/form-title.component';
+
 @Component({
   selector: 'app-contact-form',
   templateUrl: './contact-form.component.html',
@@ -7,6 +9,13 @@ import { Component, ViewChild, ElementRef, OnInit } from '@angular/core';
 })
 
 export class ContactFormComponent implements OnInit {
+
+  titleComponent: FormTitleComponent;
+
+  @ViewChild(FormTitleComponent)
+  set appTitle(titleComponent: FormTitleComponent) {
+    this.titleComponent = titleComponent;
+  }
 
   focused = false;
 

@@ -1,0 +1,11 @@
+Selector Options: read
+
+- ElementRef
+- ViewContainerRef
+- TemplateRef
+- (Type)
+
+# @ViewChild(SORChildComponent) child: SORChildComponent;
+# @ViewChild('child') child: SORChildComponent;
+# @ViewChild(SORChildComponent, {read: ElementRef}) child: ElementRef;
+# @ViewChild('child', {read: ElementRef}) child: ElementRef;
