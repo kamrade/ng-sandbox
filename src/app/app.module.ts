@@ -24,6 +24,7 @@ import { QueryDecoratorComponent } from './pages/query-decorator/query-decorator
 import { ToggleViewContentComponent } from './pages/query-decorator/toggle-view-content/toggle-view-content.component';
 import { HeaderComponent } from './shared/header/header.component';
 import { ViewContainerRefComponent } from './pages/view-container-ref/view-container-ref.component';
+import { ProfileComponent } from './pages/profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,8 @@ import { ViewContainerRefComponent } from './pages/view-container-ref/view-conta
     QueryDecoratorComponent,
     ToggleViewContentComponent,
     HeaderComponent,
-    ViewContainerRefComponent
+    ViewContainerRefComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
