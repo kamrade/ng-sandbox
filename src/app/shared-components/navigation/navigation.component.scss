@@ -6,9 +6,19 @@
   padding-right: $spacer;
   width: 240px;
 
+  .navigation-group {
+    padding-top: 20px;
+    font-size: 1rem;
+    line-height: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: $gray-600;
+  }
+
   a, a:link, a:visited {
     display: block;
     padding: $spacer/4 0;
+    padding-left: 5px;
 
     &.active-link {
       color: $primary;

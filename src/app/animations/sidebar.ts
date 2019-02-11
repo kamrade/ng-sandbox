@@ -1,3 +1,7 @@
+/*
+  SIDEBAR SHOW/HIDE ANIMATIONS
+*/
+
 import { AnimationTriggerMetadata, trigger, style, state, query, transition, animate, animateChild } from '@angular/animations';
 
 export class SidebarAnimation {

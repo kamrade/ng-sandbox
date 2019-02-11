@@ -1,6 +1,6 @@
 import { Component, ViewChild, ElementRef, OnInit } from '@angular/core';
 
-import { FormTitleComponent } from '../../shared/form-title/form-title.component';
+import { FormTitleComponent } from 'src/app/shared-components/form-title/form-title.component';
 
 @Component({
   selector: 'app-contact-form',
