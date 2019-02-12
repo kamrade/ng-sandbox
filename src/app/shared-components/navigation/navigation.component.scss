@@ -8,10 +8,9 @@
 
   .navigation-group {
     padding-top: 20px;
-    font-size: 1rem;
+    font-size: .75rem;
     line-height: 20px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+    font-weight: 600;
     color: $gray-600;
   }
 
@@ -20,9 +19,12 @@
     padding: $spacer/4 0;
     padding-left: 5px;
 
+    &:hover {
+      text-decoration: none;
+    }
+
     &.active-link {
       color: $primary;
-      font-weight: bold;
     }
   }
 }

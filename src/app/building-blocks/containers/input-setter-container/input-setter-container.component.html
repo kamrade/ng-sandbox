@@ -1,0 +1,12 @@
+<div class="display">{{cubicleId}}</div>
+<app-form-title formTitleText="Input get/set"></app-form-title>
+
+<div class="form-inline mb-3">
+
+    <label>Id:<input type="number" class="form-control mx-2" [(ngModel)]="cubicleId"></label>
+
+</div>
+
+<div class="display">
+  <app-person [cubicleId]="cubicleId"></app-person>
+</div>

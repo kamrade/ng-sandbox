@@ -35,11 +35,13 @@
   .navigation-wrapper {
     opacity: 1;
     transform: translateX(0);
+    margin-right: 40px;
   }
 
   .workspace {
     position: relative;
     flex-grow: 1;
+    padding-top: 30px;
   }
 
   .additional-sidebar {
