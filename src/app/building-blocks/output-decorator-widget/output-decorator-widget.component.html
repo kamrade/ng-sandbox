@@ -1,0 +1,9 @@
+<app-form-title [formTitleText]="widgetTitle"></app-form-title>
+
+<div class="mb-3">
+  <app-help-banner (help)="showHelp()" *ngIf="err && handler"></app-help-banner>
+  <app-help-banner *ngIf="err && !handler"></app-help-banner>
+</div>
+
+<button class="btn btn-dark" (click)="toggleErr()">Toggle Error</button>{{' '}}
+<button class="btn btn-light" (click)="toggleHandler()">Toggle Handler</button>

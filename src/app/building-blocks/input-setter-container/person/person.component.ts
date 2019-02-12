@@ -13,17 +13,17 @@ export class Person {
 export class PersonComponent implements OnInit {
 
   persons: Person[] = [{
-    name: 'John',
-    id: '1',
+    name: 'John Lennon',
+    id: '111',
   }, {
-    name: 'Ringo',
-    id: '2'
+    name: 'Ringo Starr',
+    id: '222'
   }, {
-    name: 'Paul',
-    id: '3'
+    name: 'Paul McCartney',
+    id: '333'
   }, {
-    name: 'George',
-    id: '4'
+    name: 'George Harrison',
+    id: '444'
   }];
 
   currentPerson: number = 0;
@@ -31,9 +31,7 @@ export class PersonComponent implements OnInit {
 
   @Input()
   set cubicleId(val: string) {
-    if (!this.currentPerson || this.currentPerson !== parseInt(val, 10)) {
-      this.hydratePerson(val);
-    }
+    this.hydratePerson(val);
   }
 
   get cubicleId() {
@@ -42,12 +40,17 @@ export class PersonComponent implements OnInit {
 
   hydratePerson(id) {
     const pid = parseInt(id, 10)
-    if (pid <= this.persons.length) {
+    if (pid < this.persons.length + 1) {
       this.currentPerson = pid - 1;
       this.outputName = this.persons[this.currentPerson] ? this.persons[this.currentPerson].name : 'Nobody';
     } else {
+      this.currentPerson = -1;
       this.outputName = 'Nobody';
     }
+  }
+
+  getCurrentId() {
+    return this.persons[this.currentPerson] ? this.persons[this.currentPerson].id : 'Wrong person id';
   }
 
   constructor() { }

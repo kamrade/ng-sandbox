@@ -1,0 +1,14 @@
+@import 'variables';
+
+.banner {
+  padding: $spacer/4 $spacer/2;
+  background-color: $gray-100;
+  font-size: 14px;
+  line-height: 20px;
+  border-radius: $border-radius;
+}
+
+.helpdesk-link {
+  color: $primary;
+  cursor: pointer;
+}

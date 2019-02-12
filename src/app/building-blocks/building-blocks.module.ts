@@ -3,10 +3,16 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Routes, RouterModule } from '@angular/router';
 
+import { LicenseConfigService } from './license-config.service';
+
 import { SharedComponentsModule } from 'src/app/shared-components/shared-components.module';
-import { BuildingBlocksPageComponent } from './containers/building-blocks-page/building-blocks-page.component';
-import { InputSetterContainerComponent } from './containers/input-setter-container/input-setter-container.component';
-import { PersonComponent } from './components/person/person.component';
+import { BuildingBlocksPageComponent } from './building-blocks-page/building-blocks-page.component';
+import { InputSetterContainerComponent } from './input-setter-container/input-setter-container.component';
+import { PersonComponent } from './input-setter-container/person/person.component';
+import { OutputDecoratorWidgetComponent } from './output-decorator-widget/output-decorator-widget.component';
+import { HelpBannerComponent } from './output-decorator-widget/help-banner/help-banner.component';
+import { PaywallDirectiveWidgetComponent } from './paywall-directive-widget/paywall-directive-widget.component';
+import { PaywallDirective } from './paywall-directive-widget/paywall.directive';
 
 const routes: Routes = [{
   path: '',
@@ -16,8 +22,14 @@ const routes: Routes = [{
     redirectTo: 'input',
     pathMatch: 'full'
   }, {
-    path: 'input',
+    path: 'input-decorator',
     component: InputSetterContainerComponent
+  }, {
+    path: 'output-decorator',
+    component: OutputDecoratorWidgetComponent
+  }, {
+    path: 'paywall-directive-widget',
+    component: PaywallDirectiveWidgetComponent
   }]
 }];
 
@@ -32,6 +44,12 @@ const routes: Routes = [{
   declarations: [
     BuildingBlocksPageComponent,
     InputSetterContainerComponent,
-    PersonComponent]
+    PersonComponent,
+    OutputDecoratorWidgetComponent,
+    HelpBannerComponent,
+    PaywallDirectiveWidgetComponent,
+    PaywallDirective
+  ],
+  providers: [LicenseConfigService],
 })
 export class BuildingBlocksModule { }
