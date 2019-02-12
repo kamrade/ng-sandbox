@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Routes, RouterModule } from '@angular/router';
 
-import { LicenseConfigService } from './license-config.service';
+import { LicenseConfigService } from './services/license-config.service';
 
 import { SharedComponentsModule } from 'src/app/shared-components/shared-components.module';
 import { BuildingBlocksPageComponent } from './building-blocks-page/building-blocks-page.component';

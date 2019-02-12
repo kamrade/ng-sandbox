@@ -1,5 +1,5 @@
 import { Directive, OnInit, Input, ElementRef, Renderer2 } from '@angular/core';
-import { LicenseConfigService } from 'src/app/building-blocks/license-config.service';
+import { LicenseConfigService } from 'src/app/building-blocks/services/license-config.service';
 
 @Directive({
   selector: '[appPaywall]'
