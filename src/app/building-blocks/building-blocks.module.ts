@@ -19,7 +19,7 @@ const routes: Routes = [{
   component: BuildingBlocksPageComponent,
   children: [{
     path: '',
-    redirectTo: 'input',
+    redirectTo: 'input-decorator',
     pathMatch: 'full'
   }, {
     path: 'input-decorator',
