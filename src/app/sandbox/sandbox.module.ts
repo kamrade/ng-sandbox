@@ -14,6 +14,14 @@ import { OutputDecoratorWidgetComponent } from './components/setting/output-deco
 import { HelpBannerComponent } from './components/setting/help-banner/help-banner.component';
 import { PaywallDirectiveWidgetComponent } from './components/setting/paywall-directive-widget/paywall-directive-widget.component';
 
+import { ContactFormComponent } from './components/contact-form/contact-form.component';
+import { TemplaterefSelectorComponent } from './components/templateref-selector/templateref-selector.component';
+import { TemplaterefChildComponent } from './components/templateref-selector/templateref-child/templateref-child.component';
+import { QueryDecoratorComponent } from './components/query-decorator/query-decorator.component';
+import { ToggleViewContentComponent } from './components/query-decorator/toggle-view-content/toggle-view-content.component';
+import { ViewContainerRefComponent } from './components/view-container-ref/view-container-ref.component';
+
+
 import { PaywallDirective } from './paywall.directive';
 
 const routes: Routes = [{
@@ -29,6 +37,18 @@ const routes: Routes = [{
   }, {
     path: 'setting',
     component: SettingComponent
+  }, {
+    path: 'contact-form',
+    component: ContactFormComponent
+  }, {
+    path: 'query-decorator',
+    component: QueryDecoratorComponent
+  }, {
+    path: 'template-ref-selectors',
+    component: TemplaterefSelectorComponent
+  }, {
+    path: 'view-container-ref',
+    component: ViewContainerRefComponent
   }]
 }];
 
@@ -42,6 +62,13 @@ const routes: Routes = [{
   declarations: [
     SandboxPageComponent,
     DashboardComponent,
+
+    ContactFormComponent,
+    TemplaterefSelectorComponent,
+    TemplaterefChildComponent,
+    QueryDecoratorComponent,
+    ToggleViewContentComponent,
+    ViewContainerRefComponent,
 
     SettingComponent,
     OpenCloseComponent,
