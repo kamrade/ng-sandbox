@@ -1,0 +1,16 @@
+<app-form-title [formTitleText]="'ViewContainerRef'"></app-form-title>
+
+<button class="btn btn-dark" (click)="addTemplate1()">Add Template #1</button>{{' '}}
+<button class="btn btn-dark" (click)="addTemplate2()">Add Template #2</button>{{' '}}
+<button class="btn btn-link text-danger" [disabled]="vcr1IsEmpty()" (click)="clearVCR1()">Clear VCR1</button>{{' '}}
+<button class="btn btn-link text-danger" [disabled]="vcr2IsEmpty()" (click)="clearVCR2()">Clear VCR2</button>{{' '}}
+
+<hr />
+<div #vcr1></div>
+
+<hr />
+<div #vcr2></div>
+
+<ng-template #t1>Template 1<br /></ng-template>
+<ng-template #t2>Template 2<br /></ng-template>
+<ng-template #t3>Template 3<br /></ng-template>

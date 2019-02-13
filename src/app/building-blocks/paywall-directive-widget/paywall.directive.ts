@@ -17,6 +17,7 @@ export class PaywallDirective implements OnInit {
 
   private checkLink(element: HTMLAnchorElement) {
     if (this.requiredLicense > this.cfg.currentLicense) {
+
       const span = this.ren.createElement('span');
       this.ren.addClass(span, 'paywall');
       span.title = 'Required additional license purchase';

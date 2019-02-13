@@ -1,0 +1,26 @@
+<app-form-title [formTitleText]="'Query decorators'"></app-form-title>
+
+<div class="mb-3">
+
+  <h5>ViewChild</h5>
+  <p><code>@ViewChild(selector) tmplB: TemplateRef&#60;any&#62;</code></p>
+  <h5>ViewChildren</h5>
+  <p><code>@ViewChildren(selector) tmplLstB: QueryList&#60;TemplateRef&#60;any&#62;&#62;</code></p>
+
+  <h5>ContentChild</h5>
+  <p><code>@ContentChild(selector) tmplA: TemplateRef&#60;any&#62;</code></p>
+  <h5>ContentChildren</h5>
+  <p><code>@ContentChildren(selector) tmplLstA: QueryList&#60;TemplateRef&#60;any&#62;&#62;</code></p>
+
+</div>
+
+<hr/>
+
+<app-toggle-view-content>
+  <ng-template #content>
+    <div class="toggle-view-content">
+      This is "content" - from inside the child component's
+      element tag and queried with @ContentChild
+    </div>
+  </ng-template>
+</app-toggle-view-content>

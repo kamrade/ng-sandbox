@@ -11,6 +11,9 @@ const routes: Routes = [{
   path: 'building-blocks',
   loadChildren: './building-blocks/building-blocks.module#BuildingBlocksModule'
 }, {
+  path: 'quering-the-ui',
+  loadChildren: './quering-the-ui/quering-the-ui.module#QueringTheUiModule'
+}, {
   path: 'sandbox',
   loadChildren: './sandbox/sandbox.module#SandboxModule'
 }, {

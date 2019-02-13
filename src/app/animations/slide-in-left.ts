@@ -1,4 +1,4 @@
-import { AnimationTriggerMetadata, trigger, style, transition, animate } from '@angular/animations';
+import { AnimationTriggerMetadata, query, group, trigger, style, transition, animate } from '@angular/animations';
 
 export class SlideInLeftAnimation {
 
@@ -7,14 +7,17 @@ export class SlideInLeftAnimation {
   static getAnimations(): Array<AnimationTriggerMetadata> {
     return [
       trigger('slideInLeftAnimation', [
+
         transition(':enter', [
-          style({ width: 0 }),
-          animate('.25s cubic-bezier(.2,.41,.47,.82)', style({ width: '300px' }))
+          style({ transform: 'translateX(-100%)', position: 'fixed', width: '100%' }),
+          animate('.35s cubic-bezier(.2,.41,.47,.82)', style({ transform: 'translateX(0%)' }))
         ]),
+
         transition(':leave', [
-          style({ width: '300px' }),
-          animate('.25s cubic-bezier(.2,.41,.47,.82)', style({ width: 0}))
+          style({ position: 'fixed', width: '100%' }),
+          animate('.35s cubic-bezier(.2,.41,.47,.82)', style({ transform: 'translateX(100%)', position: 'fixed', width: '100%'  }))
         ])
+
       ])
     ]
   }

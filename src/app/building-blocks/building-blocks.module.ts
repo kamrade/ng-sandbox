@@ -6,6 +6,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { LicenseConfigService } from './services/license-config.service';
 
 import { SharedComponentsModule } from 'src/app/shared-components/shared-components.module';
+
 import { BuildingBlocksPageComponent } from './building-blocks-page/building-blocks-page.component';
 import { InputSetterContainerComponent } from './input-setter-container/input-setter-container.component';
 import { PersonComponent } from './input-setter-container/person/person.component';
