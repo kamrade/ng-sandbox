@@ -5,12 +5,18 @@
 <button class="btn btn-link text-danger" [disabled]="vcr1IsEmpty()" (click)="clearVCR1()">Clear VCR1</button>{{' '}}
 <button class="btn btn-link text-danger" [disabled]="vcr2IsEmpty()" (click)="clearVCR2()">Clear VCR2</button>{{' '}}
 
-<hr />
-<div #vcr1></div>
+<hr *ngIf="!vcr1IsEmpty()" />
+<div class="container-for-chips-1" #vcr1></div>
 
-<hr />
-<div #vcr2></div>
+<hr *ngIf="!vcr2IsEmpty()" />
+<div class="container-for-chips-2" #vcr2></div>
 
-<ng-template #t1>Template 1<br /></ng-template>
-<ng-template #t2>Template 2<br /></ng-template>
-<ng-template #t3>Template 3<br /></ng-template>
+<ng-template #t1>
+  <div class="chips">Template 1</div>
+</ng-template>
+<ng-template #t2>
+  <div class="chips">Template 2</div>
+</ng-template>
+<ng-template #t3>
+  <div class="chips">Template 3</div>
+</ng-template>
