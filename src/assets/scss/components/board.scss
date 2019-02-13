@@ -4,3 +4,9 @@
   border-radius: $border-radius;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1), 0 0 16px rgba(0,0,0,0.15);
 }
+
+.board-block {
+  background-color: $gray-100;
+  padding: $spacer/2;
+  border-radius: $border-radius;
+}

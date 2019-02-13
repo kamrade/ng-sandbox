@@ -1,0 +1,57 @@
+<!--
+  There are four values that can be passed into the read option.
+  1. ElementRef
+  2. ViewContainerRef
+  3. TemplateRef
+  4. Type
+-->
+
+<app-form-title [formTitleText]="'Selector Options. Read.'"></app-form-title>
+
+<h5>ContentChild</h5>
+<p class="mb-0"><code>@ContentChild(CompBComponent) compB: CompBComponent</code></p>
+<p>It gives us back the component instance itself</p>
+<p class="mb-0"><code>@ContentChild(CompBComponent, &#123; read: ElementRef &#125;) compBElemRef: ElementRef</code></p>
+<p>it gives the ElementRef for the element in the UI</p>
+
+<div class="board-block">
+
+  <!-- This two things will be grabbing with our selectors -->
+  <div #title id='title'>Widget</div>
+  <hr/>
+
+  <app-sor-child #child></app-sor-child>
+  <hr/>
+
+  <h3>A. Child component</h3>
+  <p>Select by type: {{ child | json }}</p>
+  <p>Select by reference var: {{ child2 | json }}</p>
+  <hr/>
+
+  <h3>B. Child Component</h3>
+  <p>Select by type: {{ child | json }}</p>
+  <p>Select by type, force ElementRef: {{ childElem | json }}</p>
+  <p>Select by reference var, force ElementRef: {{ child2Elem | json }}</p>
+  <hr/>
+
+  <h3>C. HTML Element</h3>
+  <p>Select by reference var: (see console)</p>
+  <p>Select by reference var, force ElementRef: (see console)</p>
+</div>
+
+<div class="py-3">
+  <input type="text" class="form-control" cpa-dropdown [dropdownContent]="dropdownElements">
+  <button (click)="openModal('modal-dialog-test')" class="btn btn-dark">Open Modal</button>
+</div>
+
+
+
+<modal id="modal-dialog-test">
+  <div class="modal">
+    <div class="modal-body modal-body-sm">
+      <h4 class="mb-4">Modal test</h4>
+      <button class="btn btn-light" (click)="closeModal('modal-dialog-test')">Close</button>
+    </div>
+  </div>
+  <div class="modal-background"></div>
+</modal>

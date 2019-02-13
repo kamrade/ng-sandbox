@@ -12,6 +12,15 @@ import { FormDividerComponent } from './form-divider/form-divider.component';
 import { HeaderComponent } from './header/header.component';
 import { NotFoundPageComponent } from './not-found-page/not-found-page.component';
 
+import { TooltipDirective } from './tooltip/tooltip.directive';
+import { TooltipComponent } from './tooltip/tooltip.component';
+
+import { ModalService } from './modal/modal.service';
+import { ModalComponent } from './modal/modal.directive';
+
+import { DropdownComponent } from './dropdown/dropdown.component';
+import { DropdownDirective } from './dropdown/dropdown.directive';
+
 
 @NgModule({
   imports: [
@@ -20,20 +29,33 @@ import { NotFoundPageComponent } from './not-found-page/not-found-page.component
     IconsModule,
     RouterModule
   ],
+  providers: [ ModalService ],
   declarations: [
     FormFieldComponent,
     NavigationComponent,
     FormTitleComponent,
     FormDividerComponent,
     HeaderComponent,
-    NotFoundPageComponent
+    NotFoundPageComponent,
+    TooltipDirective,
+    TooltipComponent,
+    ModalComponent,
+    DropdownDirective,
+    DropdownComponent
+  ],
+  entryComponents: [
+    TooltipComponent,
+    DropdownComponent
   ],
   exports: [
     FormFieldComponent,
     NavigationComponent,
     FormTitleComponent,
     FormDividerComponent,
-    HeaderComponent
+    HeaderComponent,
+    ModalComponent,
+    TooltipComponent,
+    DropdownDirective
   ]
 })
 export class SharedComponentsModule { }

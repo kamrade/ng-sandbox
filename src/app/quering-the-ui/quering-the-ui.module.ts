@@ -11,6 +11,8 @@ import { ToggleViewContentComponent } from './query-decorators/toggle-view-conte
 import { TemplateRefSelectorComponent } from './template-ref-selector/template-ref-selector.component';
 import { TemplateRefSelectorChildComponent } from './template-ref-selector/template-ref-selector-child/template-ref-selector-child.component';
 import { ViewContainerRefWidgetComponent } from './view-container-ref-widget/view-container-ref-widget.component';
+import { SelectorOptionsWidgetComponent } from './selector-options-widget/selector-options-widget.component';
+import { SorChildComponent } from './selector-options-widget/sor-child/sor-child.component';
 
 const routes: Routes = [{
   path: '',
@@ -28,6 +30,9 @@ const routes: Routes = [{
   }, {
     path: 'view-container-ref',
     component: ViewContainerRefWidgetComponent
+  }, {
+    path: 'selector-options',
+    component: SelectorOptionsWidgetComponent
   }]
 }];
 
@@ -45,6 +50,8 @@ const routes: Routes = [{
     TemplateRefSelectorComponent,
     TemplateRefSelectorChildComponent,
     ViewContainerRefWidgetComponent,
+    SelectorOptionsWidgetComponent,
+    SorChildComponent,
   ]
 })
 export class QueringTheUiModule { }
