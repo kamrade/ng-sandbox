@@ -1,0 +1,11 @@
+<div class="ui-card">
+  <h4>Child Component</h4>
+  <br/>
+  <h5>Content</h5>
+  <ng-content></ng-content>
+  <h5>View</h5>
+  <app-sod-child2>
+    <app-sod-child3 [location]="'C'"></app-sod-child3>
+  </app-sod-child2>
+  <app-sod-child3 [location]="'D'"></app-sod-child3>
+</div>

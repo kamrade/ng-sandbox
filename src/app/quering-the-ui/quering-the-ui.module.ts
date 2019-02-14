@@ -13,6 +13,11 @@ import { TemplateRefSelectorChildComponent } from './template-ref-selector/templ
 import { ViewContainerRefWidgetComponent } from './view-container-ref-widget/view-container-ref-widget.component';
 import { SelectorOptionsWidgetComponent } from './selector-options-widget/selector-options-widget.component';
 import { SorChildComponent } from './selector-options-widget/sor-child/sor-child.component';
+import { SelectorOptionsDescendantsWidgetComponent } from './selector-options-descendants-widget/selector-options-descendants-widget.component';
+import { SodChildComponent } from './selector-options-descendants-widget/sod-child/sod-child.component';
+import { SodChild2Component } from './selector-options-descendants-widget/sod-child2/sod-child2.component';
+import { SodChild3Component } from './selector-options-descendants-widget/sod-child3/sod-child3.component';
+import { SodChild4Component } from './selector-options-descendants-widget/sod-child4/sod-child4.component';
 
 const routes: Routes = [{
   path: '',
@@ -33,6 +38,9 @@ const routes: Routes = [{
   }, {
     path: 'selector-options',
     component: SelectorOptionsWidgetComponent
+  }, {
+    path: 'selector-options-descendants',
+    component: SelectorOptionsDescendantsWidgetComponent
   }]
 }];
 
@@ -52,6 +60,11 @@ const routes: Routes = [{
     ViewContainerRefWidgetComponent,
     SelectorOptionsWidgetComponent,
     SorChildComponent,
+    SelectorOptionsDescendantsWidgetComponent,
+    SodChildComponent,
+    SodChild2Component,
+    SodChild3Component,
+    SodChild4Component,
   ]
 })
 export class QueringTheUiModule { }
