@@ -16,7 +16,13 @@ const routes: Routes = [{
 }, {
   path: 'manipulating-the-ui',
   loadChildren: './manipulating-the-ui/manipulating-the-ui.module#ManipulatingTheUiModule'
-},{
+}, {
+  path: 'learn-rxjs',
+  loadChildren: './learn-rxjs/learn-rxjs.module#LearnRxjsModule'
+}, {
+  path: 'reactive-forms',
+  loadChildren: './reactive-forms-test/reactive-forms-test.module#ReactiveFormsTestModule'
+}, {
   path: 'sandbox',
   loadChildren: './sandbox/sandbox.module#SandboxModule'
 }, {

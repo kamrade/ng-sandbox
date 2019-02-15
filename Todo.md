@@ -1,0 +1,5 @@
+- [ ] rxjs
+- [ ] reactive forms
+- [ ] ngrx, ngrx effects
+- [ ] angular animations
+- [ ] shared components
