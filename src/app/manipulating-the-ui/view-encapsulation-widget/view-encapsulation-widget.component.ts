@@ -6,7 +6,6 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./view-encapsulation-widget.component.scss']
 })
 export class ViewEncapsulationWidgetComponent implements OnInit {
-
   constructor() { }
 
   ngOnInit() {
