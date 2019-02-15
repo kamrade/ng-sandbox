@@ -14,6 +14,9 @@ const routes: Routes = [{
   path: 'quering-the-ui',
   loadChildren: './quering-the-ui/quering-the-ui.module#QueringTheUiModule'
 }, {
+  path: 'manipulating-the-ui',
+  loadChildren: './manipulating-the-ui/manipulating-the-ui.module#ManipulatingTheUiModule'
+},{
   path: 'sandbox',
   loadChildren: './sandbox/sandbox.module#SandboxModule'
 }, {
