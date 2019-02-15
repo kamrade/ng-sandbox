@@ -1,0 +1,37 @@
+<div>
+
+  <h4>Child Component</h4>
+
+  <hr />
+
+  <div class="filter-control">
+
+    <button class="btn btn-dark" (click)="filterByGenre('Science Fiction')">Science Fiction</button>{{''}}
+    <button class="btn btn-light" (click)="resetFilter()">Reset</button>{{''}}
+    <button class="btn btn-light" (click)="addBook()">Add Book</button>{{''}}
+    <button class="btn btn-light" (click)="removeBook()">Remove Book</button>{{''}}
+
+  </div>
+
+
+  <div class='book' #book *ngFor="let oneBook of allBooks" id='{{oneBook.id}}'>
+
+    <div class="book-title">
+      <span class='label'>Title</span>:
+      <span class='value'>{{oneBook.title}}</span>
+    </div>
+
+    <div class="book-author">
+      <span class='label'>Author</span>:
+      <span class='value'>{{oneBook.author}}</span>
+    </div>
+
+    <div class="book-genre">
+      <span class='label'>Genre</span>:
+      <span class='value'>{{oneBook.genre}}</span>
+    </div>
+
+  </div>
+
+
+</div>

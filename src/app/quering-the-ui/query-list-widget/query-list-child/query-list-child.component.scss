@@ -1,0 +1,16 @@
+@import 'variables';
+
+.filter-control {
+  margin-bottom: $spacer;
+}
+
+.book {
+  border-radius: $border-radius;
+  margin-bottom: $spacer;
+  background-color: $gray-100;
+  padding: $spacer/2;
+
+  &.selected {
+    background-color: $gray-200;
+  }
+}

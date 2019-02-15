@@ -19,19 +19,32 @@ export class SodChildComponent implements AfterViewInit {
 
   ngAfterViewInit() {
     setTimeout(() => {
+
+      // all views of child3 inside this component (2)
+      console.log(this.viewChildren.length);
       this.viewChildren.forEach(child => {
-        child.vc = true;
+        child.vc = true; // Selected viaViewChildren
       });
+
+      // all contents of child3 wrapped in this component (1)
+      console.log(this.contentChildren.length);
       this.contentChildren.forEach((child) => {
-        child.cc = true;
+        child.cc = true; // Selected via ContentChildren
       });
+
+      // all contents of child3 (include descendants) wrapped in this component (1)
+      console.log(this.contentChildren2.length);
       this.contentChildren2.forEach((child) => {
-        child.cc2 = true;
+        child.cc2 = true; // Selected via ContentChildren (via descendant)
       });
+
+      // all contents of child4 (including descendants) wrapped by this component ()
+      console.log(this.contentChildren3.length);
       this.contentChildren3.forEach((child) => {
         child.cc2 = true;
       });
 
+      // first content of child4 wrapped by this component
       if (this.contentChild) {
         this.contentChild.cc3 = true;
       }

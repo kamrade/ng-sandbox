@@ -1,12 +1,9 @@
-<div>
-  <app-form-title [formTitleText]="'TemplateRef Selector'"></app-form-title>
+<app-form-title [formTitleText]="'TemplateRef Selector'"></app-form-title>
 
-  <p>Here we use different ng-template from inside and outside the component and quering it with @ViewChildren and @ContentChildren</p>
+<p>Here we use different ng-template from inside and outside the component and quering it with @ViewChildren and @ContentChildren</p>
 
-  <app-template-ref-selector-child>
-    <ng-template #content1>Content #1</ng-template>
-    <ng-template #content2>Content #2</ng-template>
-    <ng-template #content3>Content #3</ng-template>
-  </app-template-ref-selector-child>
-
-</div>
+<app-template-ref-selector-child>
+  <ng-template #content1>Content #1</ng-template>
+  <ng-template #content2>Content #2</ng-template>
+  <ng-template #content3>Content #3</ng-template>
+</app-template-ref-selector-child>

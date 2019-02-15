@@ -18,6 +18,9 @@ import { SodChildComponent } from './selector-options-descendants-widget/sod-chi
 import { SodChild2Component } from './selector-options-descendants-widget/sod-child2/sod-child2.component';
 import { SodChild3Component } from './selector-options-descendants-widget/sod-child3/sod-child3.component';
 import { SodChild4Component } from './selector-options-descendants-widget/sod-child4/sod-child4.component';
+import { DependencyInjectionWidgetComponent } from './dependency-injection-widget/dependency-injection-widget.component';
+import { QueryListWidgetComponent } from './query-list-widget/query-list-widget.component';
+import { QueryListChildComponent } from './query-list-widget/query-list-child/query-list-child.component';
 
 const routes: Routes = [{
   path: '',
@@ -41,6 +44,12 @@ const routes: Routes = [{
   }, {
     path: 'selector-options-descendants',
     component: SelectorOptionsDescendantsWidgetComponent
+  }, {
+    path: 'dependency-injection',
+    component: DependencyInjectionWidgetComponent
+  }, {
+    path: 'quering-list',
+    component: QueryListWidgetComponent
   }]
 }];
 
@@ -65,6 +74,9 @@ const routes: Routes = [{
     SodChild2Component,
     SodChild3Component,
     SodChild4Component,
+    DependencyInjectionWidgetComponent,
+    QueryListWidgetComponent,
+    QueryListChildComponent,
   ]
 })
 export class QueringTheUiModule { }

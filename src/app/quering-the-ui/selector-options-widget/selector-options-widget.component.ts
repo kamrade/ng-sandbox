@@ -1,4 +1,4 @@
-import { Component, AfterViewInit, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnDestroy, AfterViewInit, ViewChild, ElementRef } from '@angular/core';
 import { SorChildComponent } from './sor-child/sor-child.component';
 
 import { ModalService } from 'src/app/shared-components/modal/modal.service';
@@ -8,7 +8,7 @@ import { ModalService } from 'src/app/shared-components/modal/modal.service';
   templateUrl: './selector-options-widget.component.html',
   styleUrls: ['./selector-options-widget.component.scss']
 })
-export class SelectorOptionsWidgetComponent implements AfterViewInit {
+export class SelectorOptionsWidgetComponent implements AfterViewInit, OnDestroy {
 
   dropdownElements = [{
     value: 'mercedes',
@@ -53,6 +53,11 @@ export class SelectorOptionsWidgetComponent implements AfterViewInit {
   }
   closeModal(id: string) {
     this.modalService.close(id);
+  }
+
+
+  ngOnDestroy() {
+    console.clear();
   }
 
 }
