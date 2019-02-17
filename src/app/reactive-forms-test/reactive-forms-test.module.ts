@@ -34,7 +34,7 @@ const routes: Routes = [{
   ],
   declarations: [
     ReactiveFormsPageComponent,
-    ReactiveFormsBasicWidgetComponent
+    ReactiveFormsBasicWidgetComponent,
   ]
 })
 export class ReactiveFormsTestModule { }

@@ -1,3 +1,11 @@
-<p>
-  reactive-forms-basic-widget works!
-</p>
+<div class="reactive-forms-test">
+
+  <div class="output-block mb-3">{{student | json}}</div>
+
+  <input class="form-control mb-3" type="text" [(ngModel)]="student.firstName">
+  <input class="form-control mb-3" type="text" [(ngModel)]="student.secondName">
+  <input class="form-control mb-3" type="text" [(ngModel)]="student.course">
+
+  <button class="btn btn-dark btn-set-title mb-3">Set title</button>
+
+</div>

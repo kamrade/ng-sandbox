@@ -1,0 +1,16 @@
+<div class="reactive-forms-test">
+
+  <div class="output-block mb-3">{{course | json}}</div>
+
+  <input class="form-control mb-3" type="text" [(ngModel)]="course.title">
+  <input class="form-control mb-3" type="text" [(ngModel)]="course.description">
+  <input class="form-control mb-3" type="text" [(ngModel)]="course.teacher">
+
+  <button class="btn btn-dark btn-set-title mb-3" (click)="setTitle()">Set title</button>
+
+  <hr />
+
+  <app-course-card [course]="course"></app-course-card>
+  <app-student-card [course]="course"></app-student-card>
+
+</div>

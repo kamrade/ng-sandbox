@@ -3,3 +3,4 @@
 - [ ] ngrx, ngrx effects
 - [ ] angular animations
 - [ ] shared components
+- [ ] mobile navigation

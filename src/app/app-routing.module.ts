@@ -23,6 +23,9 @@ const routes: Routes = [{
   path: 'reactive-forms',
   loadChildren: './reactive-forms-test/reactive-forms-test.module#ReactiveFormsTestModule'
 }, {
+  path: 'patterns-and-technics',
+  loadChildren: './patterns-and-technics/patterns-and-technics.module#PatternsAndTechnicsModule'
+}, {
   path: 'sandbox',
   loadChildren: './sandbox/sandbox.module#SandboxModule'
 }, {

@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { Student } from './student.model';
 
 @Component({
   selector: 'app-reactive-forms-basic-widget',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ReactiveFormsBasicWidgetComponent implements OnInit {
 
-  constructor() { }
+  student: Student = {
+    firstName: 'Leo',
+    secondName: 'Burns',
+    course: 'Angular'
+  }
 
   ngOnInit() {
   }
+
 
 }
