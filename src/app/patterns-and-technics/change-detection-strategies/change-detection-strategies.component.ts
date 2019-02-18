@@ -14,9 +14,13 @@ export class ChangeDetectionStrategiesComponent {
     teacher: 'Leo Burns'
   }
 
-  setTitle() {
+  updateCourseLink() {
     let newCourse: Course = { ...this.course };
     this.course = newCourse;
+  }
+
+  changeValue() {
+    this.course.teacher = `Dr. ${this.course.teacher}`;
   }
 
 

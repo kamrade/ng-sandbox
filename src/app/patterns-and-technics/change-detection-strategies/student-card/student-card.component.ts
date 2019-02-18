@@ -13,6 +13,11 @@ export class StudentCardComponent implements OnInit {
   @Input()
   course: Course = {} as Course;
 
+  get runChangeDetection() {
+    console.log('Checking the view');
+    return true;
+  }
+
   ngOnInit() {
   }
 
