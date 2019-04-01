@@ -8,7 +8,7 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 export class HelpBannerComponent implements OnInit {
 
   @Output()
-  help:EventEmitter<void> = new EventEmitter<void>();
+  help: EventEmitter<void> = new EventEmitter<void>();
 
   showHelpDeskLink = false;
 

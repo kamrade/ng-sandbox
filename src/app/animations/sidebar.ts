@@ -20,7 +20,7 @@ export class SidebarAnimation {
       */
       trigger('sidebarSlideAnimation', [
         state('open', style({
-          width: '240px'
+          width: '300px'
         })),
         state('closed', style({
           width: 0

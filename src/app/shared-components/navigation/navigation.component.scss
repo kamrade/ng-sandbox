@@ -4,7 +4,9 @@
 .sidebar {
   padding-top: $spacer;
   padding-right: $spacer;
-  width: 240px;
+  width: 280px;
+  height: calc(100vh - 80px);
+  overflow-y: scroll;
 
   .navigation-group {
     padding-top: 20px;
