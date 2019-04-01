@@ -1,0 +1,63 @@
+
+<div class="pb-3">
+  <h3>Create Employee</h3>
+</div>
+
+<div class="alert alert-light mb-4">
+  {{employeeForm.value | json}}
+</div>
+
+<form [formGroup]="employeeForm" (submit)="onSubmit()">
+
+  <div class="mb-5">
+
+    <div class="form-group">
+      <div class="form-row">
+        <div class="col-sm-2 pt-1">
+          <label for="full_name">Full name</label>
+        </div>
+        <div class="col-sm-10">
+          <input formControlName="fullName" id="full_name" class="form-control" type="text">
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="form-row">
+        <div class="col-sm-2 pt-1">
+          <label for="email">Email</label>
+        </div>
+        <div class="col-sm-10">
+          <input formControlName="email" id="email" class="form-control" type="text">
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <button type="submit" class="btn btn-dark">Submit</button>
+
+</form>
+
+<div class="py-3">
+  <table class="table">
+    <tr>
+      <th>Form Group</th>
+      <th>Form Control (fullName)</th>
+    </tr>
+    <tr>
+      <td>
+        touched: {{ employeeForm.touched }} <br/>
+        dirty: {{ employeeForm.dirty }} <br/>
+        valid: {{ employeeForm.valid }} <br/>
+        Form Values: {{ employeeForm.value | json }} <br/>
+      </td>
+      <td>
+        touched: {{ employeeForm.get('fullName').touched }}<br/>
+        dirty: {{ employeeForm.get('fullName').dirty }}<br/>
+        valid: {{ employeeForm.get('fullName').valid }}<br/>
+        Full Name Value: {{ employeeForm.get('fullName').value }}<br/>
+      </td>
+    </tr>
+  </table>
+</div>

@@ -10,6 +10,7 @@ import { ReactiveFormsPageComponent }
   from './reactive-forms-page/reactive-forms-page.component';
 import { ReactiveFormsBasicWidgetComponent }
   from './reactive-forms-basic-widget/reactive-forms-basic-widget.component';
+import { DynamicFormsWidgetComponent } from './dynamic-forms-widget/dynamic-forms-widget.component';
 
 const routes: Routes = [{
   path: '',
@@ -21,6 +22,9 @@ const routes: Routes = [{
   }, {
     path: 'basic-forms',
     component: ReactiveFormsBasicWidgetComponent
+  }, {
+    path: 'dynamic-forms',
+    component: DynamicFormsWidgetComponent
   }]
 }];
 
@@ -35,6 +39,7 @@ const routes: Routes = [{
   declarations: [
     ReactiveFormsPageComponent,
     ReactiveFormsBasicWidgetComponent,
+    DynamicFormsWidgetComponent,
   ]
 })
 export class ReactiveFormsTestModule { }
