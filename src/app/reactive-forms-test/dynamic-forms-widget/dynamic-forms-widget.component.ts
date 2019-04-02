@@ -9,6 +9,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 export class DynamicFormsWidgetComponent implements OnInit {
 
   employeeForm: FormGroup;
+  disabled = false;
 
   constructor(private fb: FormBuilder) { }
 
@@ -31,15 +32,50 @@ export class DynamicFormsWidgetComponent implements OnInit {
       })
     });
 
-    this.employeeForm.valueChanges.subscribe(val => {
-      console.log('::: form changed');
+    this.employeeForm!.get('fullName')!.valueChanges.subscribe(val => {
+      console.log('::: full name changed');
       return val;
     })
+  }
+
+  onLogData() {
+    this.logKeyValuePairs(this.employeeForm);
+  }
+
+  logKeyValuePairs(group: FormGroup): void {
+    Object.keys(group.controls).forEach((key: string) => {
+      const abstractControl = group.get(key);
+      if (abstractControl instanceof FormGroup) {
+        this.logKeyValuePairs(abstractControl);
+      } else {
+        console.log('Key:', key, 'Value = ', abstractControl!.value);
+      }
+    });
   }
 
   onSubmit(): void {
     console.log('::: submit');
     console.log(this.employeeForm.value);
+  }
+
+  onDisable() {
+    this.disableAllControls(this.employeeForm);
+    this.disabled = !this.disabled;
+  }
+
+  disableAllControls(group) {
+    Object.keys(group.controls).forEach((key: string) => {
+      const abstractControl = group.get(key);
+      if (abstractControl instanceof FormGroup) {
+        this.disableAllControls(abstractControl);
+      } else {
+        if (!this.disabled) {
+          abstractControl!.disable();
+        } else {
+          abstractControl!.enable();
+        }
+      }
+    });
   }
 
   onLoadDataClick(): void {
