@@ -3,10 +3,6 @@
   <h3>Create Employee</h3>
 </div>
 
-<div class="alert alert-light mb-4">
-  {{employeeForm.value | json}}
-</div>
-
 <form [formGroup]="employeeForm" (submit)="onSubmit()">
 
   <div class="mb-5">
@@ -33,11 +29,62 @@
       </div>
     </div>
 
+    <div class="form-group" formGroupName="skills">
+
+      <div class="form-group">
+        <div class="form-row">
+          <div class="col-sm-2 pt-1">
+            <label for="skill_name">Skill</label>
+          </div>
+          <div class="col-sm-5">
+            <input type="text" id="skill_name" class="form-control" placeholder="Skill name…"
+              formControlName="skillName">
+          </div>
+          <div class="col-sm-5">
+            <input type="text" class="form-control" placeholder="Expirience in years…"
+              formControlName="expirienceInYears">
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="form-row">
+          <div class="col-sm-2" [style.paddingTop.px]="3">
+            <label>Proficiency</label>
+          </div>
+          <div class="col-sm-10">
+            <div class="form-check form-check-inline">
+              <input id="inlineRadio1" value="beginner" type="radio" class="form-check-input"
+                formControlName="proficiency">
+              <label for="inlineRadio1" class="form-check-label">Beginner</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input id="inlineRadio2" value="intermediate" type="radio" class="form-check-input"
+                formControlName="proficiency">
+              <label for="inlineRadio2" class="form-check-label">Intermediate</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input id="inlineRadio3" value="advanced" type="radio" class="form-check-input"
+                formControlName="proficiency">
+              <label for="inlineRadio3" class="form-check-label">Advanced</label>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+  <div class="buttons-block mb-5">
+    <button type="submit" class="btn btn-dark">Submit</button>
+    <hr/>
+    <button type="button" class="btn btn-success">Save data</button>{{''}}
+    <button type="button" class="btn btn-secondary" (click)="onLoadDataClick()">Load data</button>{{''}}
+    <button type="button" class="btn btn-secondary" (click)="onPatchDataClick()">Patch data</button>
   </div>
 
-  <button type="submit" class="btn btn-dark">Submit</button>
-
 </form>
+
 
 <div class="py-3">
   <table class="table">

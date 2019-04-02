@@ -14,14 +14,42 @@ export class DynamicFormsWidgetComponent implements OnInit {
 
   ngOnInit() {
     this.employeeForm = new FormGroup({
+
       fullName: new FormControl(),
-      email: new FormControl()
+      email: new FormControl(),
+
+      // skill formGroup
+      skills: new FormGroup({
+        skillName: new FormControl(),
+        expirienceInYears: new FormControl(),
+        proficiency: new FormControl()
+      })
+
     });
   }
 
-  onSubmit() {
+  onSubmit(): void {
     console.log('::: submit');
     console.log(this.employeeForm.value);
+  }
+
+  onLoadDataClick(): void {
+    this.employeeForm.setValue({
+      fullName: 'UX Tech',
+      email: 'ux-tech@mail.com',
+      skills: {
+        skillName: 'C#',
+        expirienceInYears: '5',
+        proficiency: 'intermediate'
+      }
+    });
+  }
+
+  onPatchDataClick() {
+    this.employeeForm.patchValue({
+      fullName: 'Dennis',
+      email: 'dennis@mail.com'
+    });
   }
 
 }
