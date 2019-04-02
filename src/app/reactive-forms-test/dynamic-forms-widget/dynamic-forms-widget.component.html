@@ -14,6 +14,12 @@
         </div>
         <div class="col-sm-10">
           <input formControlName="fullName" id="full_name" class="form-control" type="text">
+          <span *ngIf="employeeForm.get('fullName').errors && employeeForm.get('fullName').errors.required" class="invalid-feedback">
+            This field is required.
+          </span>
+          <span *ngIf="employeeForm.get('fullName').errors && (employeeForm.get('fullName').errors.minlength || employeeForm.get('fullName').errors.maxlength)" class="invalid-feedback">
+            Full name must be greater than 2 characters and less than 10.
+          </span>
         </div>
       </div>
     </div>
@@ -81,30 +87,101 @@
     <button type="button" class="btn btn-success">Save data</button>{{''}}
     <button type="button" class="btn btn-secondary" (click)="onLoadDataClick()">Load data</button>{{''}}
     <button type="button" class="btn btn-secondary" (click)="onPatchDataClick()">Patch data</button>
+    <hr />
   </div>
 
 </form>
 
 
-<div class="py-3">
+
+<div class="py-2">
+  <div class="row">
+
+    <div class="col-md-6">
+      <h4>Form Group</h4>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Property</th>
+            <th>Value</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>touched</td>
+            <td><app-boolean-indicator [value]="employeeForm.touched"></app-boolean-indicator></td>
+          </tr>
+          <tr>
+            <td>dirty</td>
+            <td><app-boolean-indicator [value]="employeeForm.dirty"></app-boolean-indicator></td>
+          </tr>
+          <tr>
+            <td>valid</td>
+            <td><app-boolean-indicator [value]="employeeForm.valid"></app-boolean-indicator></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="col-md-6">
+
+      <h4>Form Control (fullName)</h4>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Property</th>
+            <th>Value</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>touched:</td>
+            <td><app-boolean-indicator [value]="employeeForm.get('fullName').touched"></app-boolean-indicator></td>
+          </tr>
+          <tr>
+            <td>dirty:</td>
+            <td><app-boolean-indicator [value]="employeeForm.get('fullName').dirty"></app-boolean-indicator></td>
+          </tr>
+          <tr>
+            <td>valid:</td>
+            <td><app-boolean-indicator [value]="employeeForm.get('fullName').valid"></app-boolean-indicator></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+</div>
+
+<div class="py-2">
+  <h4>Form Values</h4>
   <table class="table">
-    <tr>
-      <th>Form Group</th>
-      <th>Form Control (fullName)</th>
-    </tr>
-    <tr>
-      <td>
-        touched: {{ employeeForm.touched }} <br/>
-        dirty: {{ employeeForm.dirty }} <br/>
-        valid: {{ employeeForm.valid }} <br/>
-        Form Values: {{ employeeForm.value | json }} <br/>
-      </td>
-      <td>
-        touched: {{ employeeForm.get('fullName').touched }}<br/>
-        dirty: {{ employeeForm.get('fullName').dirty }}<br/>
-        valid: {{ employeeForm.get('fullName').valid }}<br/>
-        Full Name Value: {{ employeeForm.get('fullName').value }}<br/>
-      </td>
-    </tr>
+    <thead>
+      <tr>
+        <th>Property</th>
+        <th>Value</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Full Name:</td>
+        <td>{{ employeeForm.value.fullName }}</td>
+      </tr>
+      <tr>
+        <td>Email:</td>
+        <td>{{ employeeForm.value.email }}</td>
+      </tr>
+      <tr>
+        <td>Skill Name:</td>
+        <td>{{ employeeForm.value.skills.skillName }}</td>
+      </tr>
+      <tr>
+        <td>Expirience, years:</td>
+        <td>{{ employeeForm.value.skills.expirienceInYears }}</td>
+      </tr>
+      <tr>
+        <td>Proficiency:</td>
+        <td>{{ employeeForm.value.skills.proficiency }}</td>
+      </tr>
+    </tbody>
   </table>
 </div>

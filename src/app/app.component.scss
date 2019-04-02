@@ -35,17 +35,18 @@
   .navigation-wrapper {
     opacity: 1;
     transform: translateX(0);
+    flex-grow: 1;
   }
 
   .workspace {
     position: relative;
-    // flex-grow: 1;
+    flex-grow: 1;
     padding-top: 30px;
-    width: calc(100% - 300px);
-
-    @include media-max-width(lg) {
-      width: 100%;
-    }
+    // width: calc(100% - 300px);
+    //
+    // @include media-max-width(lg) {
+    //   width: 100%;
+    // }
   }
 
   .additional-sidebar {

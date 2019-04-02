@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-dynamic-forms-widget',
@@ -10,22 +10,31 @@ export class DynamicFormsWidgetComponent implements OnInit {
 
   employeeForm: FormGroup;
 
-  constructor() { }
+  constructor(private fb: FormBuilder) { }
 
   ngOnInit() {
-    this.employeeForm = new FormGroup({
 
-      fullName: new FormControl(),
-      email: new FormControl(),
-
-      // skill formGroup
-      skills: new FormGroup({
-        skillName: new FormControl(),
-        expirienceInYears: new FormControl(),
-        proficiency: new FormControl()
+    this.employeeForm = this.fb.group({
+      fullName: [
+        '',
+        [
+          Validators.required,
+          Validators.minLength(2),
+          Validators.maxLength(10)
+        ]
+      ],
+      email: [''],
+      skills: this.fb.group({
+        skillName: [''],
+        expirienceInYears: [''],
+        proficiency: ['beginner']
       })
-
     });
+
+    this.employeeForm.valueChanges.subscribe(val => {
+      console.log('::: form changed');
+      return val;
+    })
   }
 
   onSubmit(): void {

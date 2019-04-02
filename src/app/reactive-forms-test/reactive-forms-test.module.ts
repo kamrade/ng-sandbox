@@ -11,6 +11,7 @@ import { ReactiveFormsPageComponent }
 import { ReactiveFormsBasicWidgetComponent }
   from './reactive-forms-basic-widget/reactive-forms-basic-widget.component';
 import { DynamicFormsWidgetComponent } from './dynamic-forms-widget/dynamic-forms-widget.component';
+import { BooleanIndicatorComponent } from './boolean-indicator/boolean-indicator.component';
 
 const routes: Routes = [{
   path: '',
@@ -40,6 +41,7 @@ const routes: Routes = [{
     ReactiveFormsPageComponent,
     ReactiveFormsBasicWidgetComponent,
     DynamicFormsWidgetComponent,
+    BooleanIndicatorComponent,
   ]
 })
 export class ReactiveFormsTestModule { }

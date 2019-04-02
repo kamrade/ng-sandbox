@@ -1,0 +1,7 @@
+.ng-touched.ng-invalid {
+  border-color: $danger;
+
+  ~.invalid-feedback {
+    display: block;
+  }
+}
