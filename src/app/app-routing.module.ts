@@ -26,9 +26,6 @@ const routes: Routes = [{
   path: 'patterns-and-technics',
   loadChildren: './patterns-and-technics/patterns-and-technics.module#PatternsAndTechnicsModule'
 }, {
-  path: 'sandbox',
-  loadChildren: './sandbox/sandbox.module#SandboxModule'
-}, {
   path: '**',
   component: NotFoundPageComponent
 }];

@@ -1,5 +1,5 @@
-@import 'variables';
-@import 'mixins';
+@import "~src/assets/scss/bootstrap/variables";
+@import "~src/assets/scss/bootstrap/mixins";
 
 $tooltip-color: $white;
 $tooltip-bg-color: $gray-700;
