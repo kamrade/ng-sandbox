@@ -80,6 +80,17 @@ $font-weight-bold:            500;
 
 $input-btn-focus-width:       .1rem;
 
-$line-height-base: 1.4286;
 $form-group-margin-bottom: $spacer/2;
 $label-margin-bottom: $spacer/4;
+
+$h1-font-size: 32px;            // line-height: 40
+$h2-font-size: 28px;            // line-height: 35
+$h3-font-size: 24px;            // line-height: 30
+$h4-font-size: 20px;            // line-height: 25
+$h5-font-size: 16px;            // line-height: 20
+$h6-font-size: $font-size-base; // line-height: 17
+
+$line-height-base: 1.42857143;
+$line-height-lg: $line-height-base;
+$line-height-sm: $line-height-base;
+$headings-line-height: 1.25;
