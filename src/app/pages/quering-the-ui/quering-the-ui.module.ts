@@ -5,7 +5,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { SharedComponentsModule } from 'src/app/shared-components/shared-components.module';
 
-import { QueringTheUiPageComponent } from 'src/app/quering-the-ui/quering-the-ui-page/quering-the-ui-page.component';
+import { QueringTheUiPageComponent } from 'src/app/pages/quering-the-ui/quering-the-ui-page/quering-the-ui-page.component';
 import { QueryDecoratorsComponent } from './query-decorators/query-decorators.component';
 import { ToggleViewContentComponent } from './query-decorators/toggle-view-content/toggle-view-content.component';
 import { TemplateRefSelectorComponent } from './template-ref-selector/template-ref-selector.component';

@@ -9,22 +9,22 @@ const routes: Routes = [{
   pathMatch: 'full'
 }, {
   path: 'building-blocks',
-  loadChildren: './building-blocks/building-blocks.module#BuildingBlocksModule'
+  loadChildren: './pages/building-blocks/building-blocks.module#BuildingBlocksModule'
 }, {
   path: 'quering-the-ui',
-  loadChildren: './quering-the-ui/quering-the-ui.module#QueringTheUiModule'
+  loadChildren: './pages/quering-the-ui/quering-the-ui.module#QueringTheUiModule'
 }, {
   path: 'manipulating-the-ui',
-  loadChildren: './manipulating-the-ui/manipulating-the-ui.module#ManipulatingTheUiModule'
+  loadChildren: './pages/manipulating-the-ui/manipulating-the-ui.module#ManipulatingTheUiModule'
 }, {
   path: 'learn-rxjs',
-  loadChildren: './learn-rxjs/learn-rxjs.module#LearnRxjsModule'
+  loadChildren: './pages/learn-rxjs/learn-rxjs.module#LearnRxjsModule'
 }, {
   path: 'reactive-forms',
-  loadChildren: './reactive-forms-test/reactive-forms-test.module#ReactiveFormsTestModule'
+  loadChildren: './pages/reactive-forms-test/reactive-forms-test.module#ReactiveFormsTestModule'
 }, {
   path: 'patterns-and-technics',
-  loadChildren: './patterns-and-technics/patterns-and-technics.module#PatternsAndTechnicsModule'
+  loadChildren: './pages/patterns-and-technics/patterns-and-technics.module#PatternsAndTechnicsModule'
 }, {
   path: '**',
   component: NotFoundPageComponent
