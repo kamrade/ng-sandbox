@@ -41,12 +41,7 @@
   .workspace {
     position: relative;
     flex-grow: 1;
-    padding-top: 30px;
-    // width: calc(100% - 300px);
-    //
-    // @include media-max-width(lg) {
-    //   width: 100%;
-    // }
+    padding-top: 20px;
   }
 
   .additional-sidebar {
