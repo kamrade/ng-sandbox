@@ -1,0 +1,5 @@
+<app-form-title [formTitleText]="'Dynamic Case'"></app-form-title>
+
+<button class="btn btn-light" (click)="changeCase()">Change Case</button>
+<hr/>
+<p>{{ "The number of the counting shall be three" | dynamicCase:caseSetting }}</p>

@@ -7,6 +7,8 @@ import { SharedComponentsModule } from 'src/app/shared-components/shared-compone
 
 import { ManipulatingTheUiPageComponent } from './manipulating-the-ui-page/manipulating-the-ui-page.component';
 import { ViewEncapsulationWidgetComponent } from './view-encapsulation-widget/view-encapsulation-widget.component';
+import { PipeWidgetComponent } from './pipe-widget/pipe-widget.component';
+import { DynamicCasePipe } from './pipe-widget/dynamic-case.pipe';
 
 const routes: Routes = [{
   path: '',
@@ -18,6 +20,9 @@ const routes: Routes = [{
   }, {
     path: 'view-encapsulation',
     component: ViewEncapsulationWidgetComponent
+  }, {
+    path: 'pipe-widget',
+    component: PipeWidgetComponent
   }]
 }];
 
@@ -30,7 +35,9 @@ const routes: Routes = [{
   ],
   declarations: [
     ManipulatingTheUiPageComponent,
-    ViewEncapsulationWidgetComponent
+    ViewEncapsulationWidgetComponent,
+    PipeWidgetComponent,
+    DynamicCasePipe
   ]
 })
 export class ManipulatingTheUiModule { }
