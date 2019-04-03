@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class PipeWidgetComponent implements OnInit {
 
   case = ['Title', 'AllCaps', 'AllLower'];
-  caseSetting = this.case[this.index];
+  caseSetting = this.case[0];
   index: 0;
 
   constructor() { }
