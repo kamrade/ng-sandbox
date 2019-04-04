@@ -11,24 +11,39 @@ export class DynamicFormsWidgetComponent implements OnInit {
   employeeForm: FormGroup;
   disabled = false;
 
+  validationMessages = {
+    'fullName': {
+      'required': 'Full Name is required.',
+      'minlength': 'Full Name must be greater than 2 characters.',
+      'maxlength': 'Full Name must be less than 10 characters.'
+    },
+    'email': {
+      'required': 'Email is required.'
+    },
+    'skillName': {
+      'required': 'Skill Name is required.'
+    },
+    'expirienceInYears': {
+      'required': 'Expirience is required.'
+    },
+    'proficiency': {
+      'required': 'Proficiency is required.'
+    }
+  }
+
   constructor(private fb: FormBuilder) { }
 
   ngOnInit() {
 
     this.employeeForm = this.fb.group({
       fullName: [
-        '',
-        [
-          Validators.required,
-          Validators.minLength(2),
-          Validators.maxLength(10)
-        ]
+        '', [Validators.required, Validators.minLength(2), Validators.maxLength(10)]
       ],
-      email: [''],
+      email: ['', Validators.required],
       skills: this.fb.group({
-        skillName: [''],
-        expirienceInYears: [''],
-        proficiency: ['beginner']
+        skillName: ['', Validators.required],
+        expirienceInYears: ['', Validators.required],
+        proficiency: ['', Validators.required]
       })
     });
 
