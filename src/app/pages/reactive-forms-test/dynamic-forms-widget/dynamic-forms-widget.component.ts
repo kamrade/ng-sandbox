@@ -31,6 +31,14 @@ export class DynamicFormsWidgetComponent implements OnInit {
     }
   }
 
+  formErrors = {
+    'fullName': '',
+    'email': '',
+    'skillName': '',
+    'expirienceInYears': '',
+    'proficiency': ''
+  }
+
   constructor(private fb: FormBuilder) { }
 
   ngOnInit() {
@@ -51,6 +59,27 @@ export class DynamicFormsWidgetComponent implements OnInit {
       console.log('::: full name changed');
       return val;
     })
+  }
+
+  onLogErrors() {
+    this.logValidationErrors(this.employeeForm);
+  }
+
+  logValidationErrors(group: FormGroup): void {
+    Object.keys(group.controls).forEach((key: string) => {
+      const abstractControl = group.get(key);
+      if (abstractControl instanceof FormGroup) {
+        this.logValidationErrors(abstractControl);
+      } else {
+        if (abstractControl && !abstractControl.valid) {
+          const messages = this.validationMessages[key];
+          console.log(messages);
+          for (const errorKey in abstractControl.errors) {
+
+          }
+        }
+      }
+    });
   }
 
   onLogData() {

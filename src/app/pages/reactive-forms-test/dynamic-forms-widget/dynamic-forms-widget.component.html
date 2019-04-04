@@ -88,6 +88,7 @@
     <button type="button" class="btn btn-secondary" (click)="onLoadDataClick()">Load data</button>{{''}}
     <button type="button" class="btn btn-secondary" (click)="onPatchDataClick()">Patch data</button>
     <button type="button" class="btn btn-secondary ml-3" (click)="onLogData()">Log data</button>{{''}}
+    <button type="button" class="btn btn-secondary ml-3" (click)="onLogErrors()">Log errors</button>{{''}}
     <button type="button" class="btn" (click)="onDisable()"
       [ngClass]="{'btn-outline-danger': !disabled, 'btn-outline-success': disabled}">
       <span *ngIf="!disabled">Disable</span>
