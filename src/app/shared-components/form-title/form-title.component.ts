@@ -7,11 +7,8 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class FormTitleComponent implements OnInit {
 
-  @Input() formTitleText: string;
-
   constructor() { }
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
 }
