@@ -56,13 +56,8 @@ export class DynamicFormsWidgetComponent implements OnInit {
     });
 
     this.employeeForm!.get('fullName')!.valueChanges.subscribe(val => {
-      console.log('::: full name changed');
       return val;
-    })
-  }
-
-  onLogErrors() {
-    this.logValidationErrors(this.employeeForm);
+    });
   }
 
   logValidationErrors(group: FormGroup): void {
@@ -71,19 +66,25 @@ export class DynamicFormsWidgetComponent implements OnInit {
       if (abstractControl instanceof FormGroup) {
         this.logValidationErrors(abstractControl);
       } else {
+
         if (abstractControl && !abstractControl.valid) {
           const messages = this.validationMessages[key];
-          console.log(messages);
-          for (const errorKey in abstractControl.errors) {
-
+          if (abstractControl.errors) {
+            for (const errorKey in abstractControl.errors) {
+              this.formErrors[key] += messages[errorKey] + ' ';
+            }
           }
+        } else {
+          this.formErrors[key] = '';
         }
+
       }
     });
   }
 
-  onLogData() {
-    this.logKeyValuePairs(this.employeeForm);
+  onLogErrors() {
+    this.logValidationErrors(this.employeeForm);
+    console.log(this.formErrors);
   }
 
   logKeyValuePairs(group: FormGroup): void {
@@ -95,6 +96,10 @@ export class DynamicFormsWidgetComponent implements OnInit {
         console.log('Key:', key, 'Value = ', abstractControl!.value);
       }
     });
+  }
+
+  onLogData() {
+    this.logKeyValuePairs(this.employeeForm);
   }
 
   onSubmit(): void {
