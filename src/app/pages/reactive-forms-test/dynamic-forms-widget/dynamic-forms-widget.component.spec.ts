@@ -1,6 +1,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { DynamicFormsWidgetComponent } from './dynamic-forms-widget.component';
+
+import { BooleanIndicatorComponent } from '../boolean-indicator/boolean-indicator.component';
 
 describe('DynamicFormsWidgetComponent', () => {
   let component: DynamicFormsWidgetComponent;
@@ -8,7 +11,8 @@ describe('DynamicFormsWidgetComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ DynamicFormsWidgetComponent ]
+      imports: [FormsModule, ReactiveFormsModule],
+      declarations: [ DynamicFormsWidgetComponent, BooleanIndicatorComponent ]
     })
     .compileComponents();
   }));
@@ -19,7 +23,7 @@ describe('DynamicFormsWidgetComponent', () => {
     fixture.detectChanges();
   });
 
-  // it('should create', () => {
-  //   expect(component).toBeTruthy();
-  // });
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
 });
