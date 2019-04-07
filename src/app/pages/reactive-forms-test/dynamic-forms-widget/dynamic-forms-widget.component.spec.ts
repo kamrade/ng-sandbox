@@ -26,4 +26,20 @@ describe('DynamicFormsWidgetComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should create a form with controls', () => {
+    expect(component.employeeForm.contains('fullName')).toBeTruthy();
+    expect(component.employeeForm.contains('email')).toBeTruthy();
+  });
+
+    it('shouldmake the control fullName required', () => {
+      let control = component.employeeForm.get('fullName');
+      control.setValue('');
+      expect(control.valid).toBeFalsy();
+      control.setValue('1');
+      expect(control.valid).toBeFalsy();
+      control.setValue('Dennis');
+      expect(control.valid).toBeTruthy();
+    });
+
 });
