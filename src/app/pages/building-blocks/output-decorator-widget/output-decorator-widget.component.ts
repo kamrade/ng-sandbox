@@ -10,6 +10,7 @@ export class OutputDecoratorWidgetComponent {
   widgetTitle = 'Output Decorator';
   err = false;
   handler = true;
+  logNumber = 0;
 
   toggleHandler() {
     this.handler = !this.handler;
@@ -19,7 +20,8 @@ export class OutputDecoratorWidgetComponent {
   }
 
   showHelp() {
-    alert('This code is in the parent component.  Collect error information and redirect to help desk...');
+    this.logNumber += 1;
+    // alert('This code is in the parent component.  Collect error information and redirect to help desk...');
   }
 
 }

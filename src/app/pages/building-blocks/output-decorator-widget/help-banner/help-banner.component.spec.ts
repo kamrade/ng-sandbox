@@ -22,4 +22,15 @@ describe('HelpBannerComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should raise help event when upvoted', () => {
+
+    let totalVotes = null;
+    component.help.subscribe(tv => totalVotes = tv);
+    component.helpClicked();
+
+    expect(totalVotes).not.toBeNull();
+    expect(totalVotes).toBe(1);
+  });
+
 });

@@ -7,10 +7,10 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 })
 export class HelpBannerComponent implements OnInit {
 
-  @Output()
-  help: EventEmitter<void> = new EventEmitter<void>();
-
   showHelpDeskLink = false;
+  totalHelpVotes = 0; // total votes
+  @Output()
+  help: EventEmitter<number> = new EventEmitter<number>(); // votes changed
 
   ngOnInit() {
     // Весь смысл в том, что если родительский компонент
@@ -20,7 +20,8 @@ export class HelpBannerComponent implements OnInit {
   }
 
   helpClicked() {
-    this.help.emit();
+    this.totalHelpVotes++;
+    this.help.emit( this.totalHelpVotes );
   }
 
 }

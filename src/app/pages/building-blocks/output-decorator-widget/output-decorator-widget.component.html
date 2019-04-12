@@ -5,5 +5,9 @@
   <app-help-banner *ngIf="err && !handler"></app-help-banner>
 </div>
 
+<div class="my-3">
+  Log: {{ logNumber }}
+</div>
+
 <button class="btn btn-dark" (click)="toggleErr()">Toggle Error</button>{{' '}}
 <button class="btn btn-light" (click)="toggleHandler()">Toggle Handler</button>
