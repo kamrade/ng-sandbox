@@ -34,12 +34,14 @@ describe('DynamicFormsWidgetComponent', () => {
 
     it('shouldmake the control fullName required', () => {
       let control = component.employeeForm.get('fullName');
-      control.setValue('');
-      expect(control.valid).toBeFalsy();
-      control.setValue('1');
-      expect(control.valid).toBeFalsy();
-      control.setValue('Dennis');
-      expect(control.valid).toBeTruthy();
+      if (control) {
+        control.setValue('');
+        expect(control.valid).toBeFalsy();
+        control.setValue('1');
+        expect(control.valid).toBeFalsy();
+        control.setValue('Dennis');
+        expect(control.valid).toBeTruthy();
+      }
     });
 
 });

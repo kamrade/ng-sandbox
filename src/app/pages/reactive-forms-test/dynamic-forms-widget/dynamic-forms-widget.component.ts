@@ -66,7 +66,7 @@ export class DynamicFormsWidgetComponent implements OnInit {
       if (abstractControl instanceof FormGroup) {
         this.logValidationErrors(abstractControl);
       } else {
-
+        // Если в текущем formControl есть ошибки валидации
         if (abstractControl && !abstractControl.valid) {
           const messages = this.validationMessages[key];
           if (abstractControl.errors) {
@@ -75,6 +75,7 @@ export class DynamicFormsWidgetComponent implements OnInit {
             }
           }
         } else {
+          // Если ошибок нет, очищаем поле
           this.formErrors[key] = '';
         }
 
@@ -102,17 +103,23 @@ export class DynamicFormsWidgetComponent implements OnInit {
     this.logKeyValuePairs(this.employeeForm);
   }
 
-  onSubmit(): void {
-    console.log('::: submit');
-    console.log(this.employeeForm.value);
-  }
+  // loopOverForm(group: FormGroup, callback) {
+  //   Object.keys(group.controls).forEach((key: string) => {
+  //     const abstractControl = group.get(key);
+  //     if (abstractControl instanceof FormGroup) {
+  //       this.loopOverForm(group: FormGroup, callback);
+  //     } else {
+  //       callback(group);
+  //     }
+  //   })
+  // }
 
   onDisable() {
     this.disableAllControls(this.employeeForm);
     this.disabled = !this.disabled;
   }
 
-  disableAllControls(group) {
+  disableAllControls(group: FormGroup): void {
     Object.keys(group.controls).forEach((key: string) => {
       const abstractControl = group.get(key);
       if (abstractControl instanceof FormGroup) {
@@ -144,6 +151,11 @@ export class DynamicFormsWidgetComponent implements OnInit {
       fullName: 'Dennis',
       email: 'dennis@mail.com'
     });
+  }
+
+  onSubmit(): void {
+    console.log('::: submit');
+    console.log(this.employeeForm.value);
   }
 
 }

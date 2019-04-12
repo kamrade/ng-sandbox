@@ -31,6 +31,9 @@
         </div>
         <div class="col-sm-10">
           <input formControlName="email" id="email" class="form-control" type="text">
+          <span *ngIf="employeeForm.get('email').errors && employeeForm.get('email').errors.required" class="invalid-feedback">
+            This field is required.
+          </span>
         </div>
       </div>
     </div>
@@ -45,10 +48,16 @@
           <div class="col-sm-5">
             <input type="text" id="skill_name" class="form-control" placeholder="Skill name…"
               formControlName="skillName">
+            <span *ngIf="employeeForm.get('skills').get('skillName').errors && employeeForm.get('skills').get('skillName').errors.required" class="invalid-feedback">
+              This field is required.
+            </span>
           </div>
           <div class="col-sm-5">
             <input type="text" class="form-control" placeholder="Expirience in years…"
               formControlName="expirienceInYears">
+            <span *ngIf="employeeForm.get('skills').get('expirienceInYears').errors && employeeForm.get('skills').get('expirienceInYears').errors.required" class="invalid-feedback">
+              This field is required.
+            </span>
           </div>
         </div>
       </div>

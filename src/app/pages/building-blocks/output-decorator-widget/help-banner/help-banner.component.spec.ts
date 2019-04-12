@@ -25,11 +25,12 @@ describe('HelpBannerComponent', () => {
 
   it('should raise help event when upvoted', () => {
 
-    let totalVotes = null;
+    let totalVotes = 0;
     component.help.subscribe(tv => totalVotes = tv);
     component.helpClicked();
 
     expect(totalVotes).not.toBeNull();
+    expect(totalVotes).not.toBe(0);
     expect(totalVotes).toBe(1);
   });
 
