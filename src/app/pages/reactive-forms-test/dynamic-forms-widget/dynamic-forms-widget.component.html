@@ -3,6 +3,12 @@
   <h3>Create Employee</h3>
 </div>
 
+<div class="py-3">
+  <input type="text" class="form-control" cpa-dropdown [dropdownContent]="dropdownElements">
+  <!-- <button (click)="openModal('modal-dialog-confirm')" class="btn btn-dark">Open Modal</button> -->
+</div>
+
+
 <form [formGroup]="employeeForm" (submit)="onSubmit()">
 
   <div class="mb-5">
@@ -194,3 +200,19 @@
     </tbody>
   </table>
 </div>
+
+<modal id="modal-dialog-confirm">
+  <div class="modal">
+    <div class="modal-body modal-body-sm">
+      <h4 class="mb-4">Confirm information</h4>
+      <p>Full name: {{employeeForm.fullName}}</p>
+      <p>Email: {{employeeForm.email}}</p>
+      <h6>Skill</h6>
+      <!-- <p>Skill name: {{employeeForm.fullName}}</p>
+      <p>Expirience, years: {{employeeForm.fullName}}</p>
+      <p>Proficiency: {{employeeForm.fullName}}</p> -->
+      <button class="btn btn-light" (click)="modalService.close('modal-dialog-confirm')">Close</button>
+    </div>
+  </div>
+  <div class="modal-background"></div>
+</modal>

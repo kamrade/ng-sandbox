@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { ModalService } from 'src/app/shared-components/modal/modal.service';
 
 import validationMessages from './validation-messages';
 
@@ -22,7 +23,19 @@ export class DynamicFormsWidgetComponent implements OnInit {
     'proficiency': ''
   }
 
-  constructor(private fb: FormBuilder) { }
+  dropdownElements = [{
+    value: 'mercedes',
+    title: 'Mercedes'
+  }, {
+    value: 'toyota',
+    title: 'Toyota'
+  }, {
+    value: 'nissan',
+    title: 'Nissan'
+  }];
+
+
+  constructor(private fb: FormBuilder, public modalService: ModalService) { }
 
   ngOnInit() {
 
@@ -127,6 +140,14 @@ export class DynamicFormsWidgetComponent implements OnInit {
   onSubmit(): void {
     console.log('::: submit');
     console.log(this.employeeForm.value);
+    this.modalService.open('modal-dialog-confirm');
+  }
+
+  openModal(id: string) {
+    this.modalService.open(id);
+  }
+  closeModal(id: string) {
+    this.modalService.close(id);
   }
 
 }
