@@ -60,80 +60,59 @@ export class DynamicFormsWidgetComponent implements OnInit {
     });
   }
 
-  logValidationErrors(group: FormGroup): void {
+  // LOOP OVER FORM
+
+  loopOverForm(group: FormGroup, cb) {
     Object.keys(group.controls).forEach((key: string) => {
       const abstractControl = group.get(key);
       if (abstractControl instanceof FormGroup) {
-        this.logValidationErrors(abstractControl);
+        this.loopOverForm(abstractControl, cb);
       } else {
-        // Если в текущем formControl есть ошибки валидации
-        if (abstractControl && !abstractControl.valid) {
-          const messages = this.validationMessages[key];
-          if (abstractControl.errors) {
-            for (const errorKey in abstractControl.errors) {
-              this.formErrors[key] += messages[errorKey] + ' ';
-            }
-          }
-        } else {
-          // Если ошибок нет, очищаем поле
-          this.formErrors[key] = '';
-        }
-
+        cb(abstractControl, key);
       }
     });
+  }
+
+  // LOG ERRORS
+  logValidationErrors(abstractControl, key) {
+    this.formErrors[key] = '';
+    if (abstractControl && !abstractControl.valid) {
+      const messages = this.validationMessages[key];
+      for (const errorKey in abstractControl.errors) {
+        this.formErrors[key] += messages[errorKey] + ' ';
+      }
+    }
   }
 
   onLogErrors() {
-    this.logValidationErrors(this.employeeForm);
+    this.loopOverForm(this.employeeForm, this.logValidationErrors.bind(this));
     console.log(this.formErrors);
   }
 
-  logKeyValuePairs(group: FormGroup): void {
-    Object.keys(group.controls).forEach((key: string) => {
-      const abstractControl = group.get(key);
-      if (abstractControl instanceof FormGroup) {
-        this.logKeyValuePairs(abstractControl);
-      } else {
-        console.log('Key:', key, 'Value = ', abstractControl!.value);
-      }
-    });
+  // LOG DATA
+  logKeyValue(abstractControl, key) {
+    console.log('Key:', key, 'Value = ', abstractControl!.value);
   }
 
   onLogData() {
-    this.logKeyValuePairs(this.employeeForm);
+    this.loopOverForm(this.employeeForm, this.logKeyValue.bind(this));
   }
 
-  // loopOverForm(group: FormGroup, callback) {
-  //   Object.keys(group.controls).forEach((key: string) => {
-  //     const abstractControl = group.get(key);
-  //     if (abstractControl instanceof FormGroup) {
-  //       this.loopOverForm(group: FormGroup, callback);
-  //     } else {
-  //       callback(group);
-  //     }
-  //   })
-  // }
-
+  // DISABLE ALL CONTROLS
   onDisable() {
-    this.disableAllControls(this.employeeForm);
+    this.loopOverForm(this.employeeForm, this.disableAllControls.bind(this));
     this.disabled = !this.disabled;
   }
 
-  disableAllControls(group: FormGroup): void {
-    Object.keys(group.controls).forEach((key: string) => {
-      const abstractControl = group.get(key);
-      if (abstractControl instanceof FormGroup) {
-        this.disableAllControls(abstractControl);
-      } else {
-        if (!this.disabled) {
-          abstractControl!.disable();
-        } else {
-          abstractControl!.enable();
-        }
-      }
-    });
+  disableAllControls(abstractControl) {
+    if (!this.disabled) {
+      abstractControl!.disable();
+    } else {
+      abstractControl!.enable();
+    }
   }
 
+  // LOAD DATA TO FORM
   onLoadDataClick(): void {
     this.employeeForm.setValue({
       fullName: 'UX Tech',
@@ -146,12 +125,16 @@ export class DynamicFormsWidgetComponent implements OnInit {
     });
   }
 
+  // PATCH DATA EXAMPLE
+
   onPatchDataClick() {
     this.employeeForm.patchValue({
       fullName: 'Dennis',
       email: 'dennis@mail.com'
     });
   }
+
+  // JUST TEMPLATE FOR SUBMIT FORM
 
   onSubmit(): void {
     console.log('::: submit');
