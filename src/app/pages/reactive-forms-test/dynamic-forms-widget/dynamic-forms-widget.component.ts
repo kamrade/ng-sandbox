@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
+import validationMessages from './validation-messages';
+
 @Component({
   selector: 'app-dynamic-forms-widget',
   templateUrl: './dynamic-forms-widget.component.html',
@@ -10,26 +12,7 @@ export class DynamicFormsWidgetComponent implements OnInit {
 
   employeeForm: FormGroup;
   disabled = false;
-
-  validationMessages = {
-    'fullName': {
-      'required': 'Full Name is required.',
-      'minlength': 'Full Name must be greater than 2 characters.',
-      'maxlength': 'Full Name must be less than 10 characters.'
-    },
-    'email': {
-      'required': 'Email is required.'
-    },
-    'skillName': {
-      'required': 'Skill Name is required.'
-    },
-    'expirienceInYears': {
-      'required': 'Expirience is required.'
-    },
-    'proficiency': {
-      'required': 'Proficiency is required.'
-    }
-  }
+  validationMessages = validationMessages;
 
   formErrors = {
     'fullName': '',
@@ -58,6 +41,11 @@ export class DynamicFormsWidgetComponent implements OnInit {
     this.employeeForm!.get('fullName')!.valueChanges.subscribe(val => {
       return val;
     });
+
+    this.employeeForm.valueChanges.subscribe(data => {
+      this.onLogErrors();
+    });
+
   }
 
   // LOOP OVER FORM
@@ -76,7 +64,7 @@ export class DynamicFormsWidgetComponent implements OnInit {
   // LOG ERRORS
   logValidationErrors(abstractControl, key) {
     this.formErrors[key] = '';
-    if (abstractControl && !abstractControl.valid) {
+    if (abstractControl && !abstractControl.valid && (abstractControl.touched || abstractControl.dirty)) {
       const messages = this.validationMessages[key];
       for (const errorKey in abstractControl.errors) {
         this.formErrors[key] += messages[errorKey] + ' ';

@@ -13,13 +13,8 @@
           <label for="full_name">Full name</label>
         </div>
         <div class="col-sm-10">
-          <input formControlName="fullName" id="full_name" class="form-control" type="text">
-          <span *ngIf="employeeForm.get('fullName').errors && employeeForm.get('fullName').errors.required" class="invalid-feedback">
-            This field is required.
-          </span>
-          <span *ngIf="employeeForm.get('fullName').errors && (employeeForm.get('fullName').errors.minlength || employeeForm.get('fullName').errors.maxlength)" class="invalid-feedback">
-            Full name must be greater than 2 characters and less than 10.
-          </span>
+          <input (blur)="onLogErrors()" formControlName="fullName" id="full_name" class="form-control" type="text">
+          <span *ngIf="formErrors.fullName" class="invalid-feedback">{{formErrors.fullName}}</span>
         </div>
       </div>
     </div>
@@ -30,10 +25,8 @@
           <label for="email">Email</label>
         </div>
         <div class="col-sm-10">
-          <input formControlName="email" id="email" class="form-control" type="text">
-          <span *ngIf="employeeForm.get('email').errors && employeeForm.get('email').errors.required" class="invalid-feedback">
-            This field is required.
-          </span>
+          <input (blur)="onLogErrors()" formControlName="email" id="email" class="form-control" type="text">
+          <span *ngIf="formErrors.email" class="invalid-feedback">{{formErrors.email}}</span>
         </div>
       </div>
     </div>
@@ -47,18 +40,14 @@
             <label for="skill_name">Skill</label>
           </div>
           <div class="col-sm-5">
-            <input type="text" id="skill_name" class="form-control" placeholder="Skill name…"
+            <input (blur)="onLogErrors()" type="text" id="skill_name" class="form-control" placeholder="Skill name…"
               formControlName="skillName">
-            <span *ngIf="employeeForm.get('skills').get('skillName').errors && employeeForm.get('skills').get('skillName').errors.required" class="invalid-feedback">
-              This field is required.
-            </span>
+            <span *ngIf="formErrors.skillName" class="invalid-feedback">{{formErrors.skillName}}</span>
           </div>
           <div class="col-sm-5">
-            <input type="text" class="form-control" placeholder="Expirience in years…"
+            <input (blur)="onLogErrors()" type="text" class="form-control" placeholder="Expirience in years…"
               formControlName="expirienceInYears">
-            <span *ngIf="employeeForm.get('skills').get('expirienceInYears').errors && employeeForm.get('skills').get('expirienceInYears').errors.required" class="invalid-feedback">
-              This field is required.
-            </span>
+            <span *ngIf="formErrors.expirienceInYears" class="invalid-feedback">{{formErrors.expirienceInYears}}</span>
           </div>
         </div>
 
@@ -71,21 +60,23 @@
           </div>
           <div class="col-sm-10">
             <div class="form-check form-check-inline">
-              <input id="inlineRadio1" value="beginner" type="radio" class="form-check-input"
+              <input (blur)="onLogErrors()" id="inlineRadio1" value="beginner" type="radio" class="form-check-input"
                 formControlName="proficiency">
               <label for="inlineRadio1" class="form-check-label">Beginner</label>
             </div>
             <div class="form-check form-check-inline">
-              <input id="inlineRadio2" value="intermediate" type="radio" class="form-check-input"
+              <input (blur)="onLogErrors()" id="inlineRadio2" value="intermediate" type="radio" class="form-check-input"
                 formControlName="proficiency">
               <label for="inlineRadio2" class="form-check-label">Intermediate</label>
             </div>
             <div class="form-check form-check-inline">
-              <input id="inlineRadio3" value="advanced" type="radio" class="form-check-input"
+              <input (blur)="onLogErrors()" id="inlineRadio3" value="advanced" type="radio" class="form-check-input"
                 formControlName="proficiency">
               <label for="inlineRadio3" class="form-check-label">Advanced</label>
             </div>
+            <span *ngIf="formErrors.proficiency" class="invalid-feedback d-block">{{formErrors.proficiency}}</span>
           </div>
+
         </div>
       </div>
 
