@@ -9,5 +9,8 @@
 
 ## CURRENT
 
-- [ ] Исправить тесты в dynamic-forms-widget
-- [ ] Добавить выведение информации в модалке.
+- [x] dynamic-forms-widget: исправить тесты.
+- [ ] dynamic-forms-widget: добавить выведение информации в модалке.
+      * [x] устанавливать ошибки валидации
+- [ ] dynamic-forms-widget: добавить select на skill
+- [ ] dynamic-forms-widget: разбить на компоненты помельче

@@ -1,5 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { SharedComponentsModule } from 'src/app/shared-components/shared-components.module';
 
 import { DynamicFormsWidgetComponent } from './dynamic-forms-widget.component';
 
@@ -11,7 +12,7 @@ describe('DynamicFormsWidgetComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [FormsModule, ReactiveFormsModule],
+      imports: [ FormsModule, ReactiveFormsModule, SharedComponentsModule ],
       declarations: [ DynamicFormsWidgetComponent, BooleanIndicatorComponent ]
     })
     .compileComponents();

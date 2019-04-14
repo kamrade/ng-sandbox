@@ -21,16 +21,16 @@ $spacer: 1.25rem; // (20px)
 $spacers: ();
 $spacers: map-merge(
   (
-    0: 0,
-    1: ($spacer * .25),
-    2: ($spacer * .5),
-    3: $spacer,
-    4: ($spacer * 1.5),
-    5: ($spacer * 2),
-    6: ($spacer * 3),
-    7: ($spacer * 4),
-    8: ($spacer * 5),
-    9: ($spacer * 6),
+    0: 0,                // 0
+    1: ($spacer * .25),  // 5
+    2: ($spacer * .5),   // 10
+    3: $spacer,          // 20
+    4: ($spacer * 1.5),  // 30
+    5: ($spacer * 2),    // 40
+    6: ($spacer * 3),    // 60
+    7: ($spacer * 4),    // 80
+    8: ($spacer * 5),    // 100
+    9: ($spacer * 6),    // 120
   ),
   $spacers
 );

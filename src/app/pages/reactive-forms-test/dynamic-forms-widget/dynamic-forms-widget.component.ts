@@ -74,6 +74,19 @@ export class DynamicFormsWidgetComponent implements OnInit {
     });
   }
 
+  // SET ERRORS
+  setValidationErrors(abstractControl, key) {
+    this.formErrors[key] = '';
+    if (abstractControl && !abstractControl.valid) {
+      abstractControl.markAsTouched();
+      abstractControl.markAsDirty();
+      const messages = this.validationMessages[key];
+      for (const errorKey in abstractControl.errors) {
+        this.formErrors[key] += messages[errorKey] + ' ';
+      }
+    }
+  }
+
   // LOG ERRORS
   logValidationErrors(abstractControl, key) {
     this.formErrors[key] = '';
@@ -87,7 +100,7 @@ export class DynamicFormsWidgetComponent implements OnInit {
 
   onLogErrors() {
     this.loopOverForm(this.employeeForm, this.logValidationErrors.bind(this));
-    console.log(this.formErrors);
+    // console.log(this.formErrors);
   }
 
   // LOG DATA
@@ -138,9 +151,11 @@ export class DynamicFormsWidgetComponent implements OnInit {
   // JUST TEMPLATE FOR SUBMIT FORM
 
   onSubmit(): void {
-    console.log('::: submit');
-    console.log(this.employeeForm.value);
-    this.modalService.open('modal-dialog-confirm');
+    if (this.employeeForm.valid) {
+      this.modalService.open('modal-dialog-confirm');
+    } else {
+      this.loopOverForm(this.employeeForm, this.setValidationErrors.bind(this));
+    }
   }
 
   openModal(id: string) {

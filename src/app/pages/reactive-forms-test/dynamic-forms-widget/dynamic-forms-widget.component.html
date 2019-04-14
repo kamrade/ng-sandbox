@@ -92,7 +92,7 @@
   <div class="buttons-block mb-5">
     <button type="submit" class="btn btn-dark">Submit</button>
     <hr/>
-    <button type="button" class="btn btn-success">Save data</button>{{''}}
+
     <button type="button" class="btn btn-secondary" (click)="onLoadDataClick()">Load data</button>{{''}}
     <button type="button" class="btn btn-secondary" (click)="onPatchDataClick()">Patch data</button>
     <button type="button" class="btn btn-secondary ml-3" (click)="onLogData()">Log data</button>{{''}}
@@ -204,13 +204,17 @@
 <modal id="modal-dialog-confirm">
   <div class="modal">
     <div class="modal-body modal-body-sm">
-      <h4 class="mb-4">Confirm information</h4>
-      <p>Full name: {{employeeForm.fullName}}</p>
-      <p>Email: {{employeeForm.email}}</p>
-      <h6>Skill</h6>
-      <!-- <p>Skill name: {{employeeForm.fullName}}</p>
-      <p>Expirience, years: {{employeeForm.fullName}}</p>
-      <p>Proficiency: {{employeeForm.fullName}}</p> -->
+      <div class="data-block mb-5">
+        <h4 class="mb-4">Confirm information</h4>
+        <p>Full name: {{employeeForm.value.fullName}}</p>
+        <p>Email: {{employeeForm.value.email}}</p>
+        <hr/>
+        <h6 class="mb-3">Skills</h6>
+        <p>Skill name: {{employeeForm.value.skills.skillName}}</p>
+        <p>Expirience, years: {{employeeForm.value.skills.expirienceInYears}}</p>
+        <p>Proficiency: {{employeeForm.value.skills.proficiency}}</p>
+        <hr/>
+      </div>
       <button class="btn btn-light" (click)="modalService.close('modal-dialog-confirm')">Close</button>
     </div>
   </div>
