@@ -36,14 +36,15 @@ export class SelectorOptionsWidgetComponent implements AfterViewInit, OnDestroy 
 
   ngAfterViewInit(): void {
     // A
-    // console.log(this.child2);
+    console.log(this.child);
+    console.log(this.child2);
     // B
     console.log(this.childElem);
     console.log(this.child2Elem);
 
     // C
-    // console.log(this.title);
-    // console.log(this.titleElem);
+    console.log(this.title);
+    console.log(this.titleElem);
   }
 
   constructor(public modalService: ModalService) {}

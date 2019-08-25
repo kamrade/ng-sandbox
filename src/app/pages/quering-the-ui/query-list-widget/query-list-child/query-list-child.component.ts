@@ -34,7 +34,7 @@ export class QueryListChildComponent implements OnInit, AfterViewInit {
   resetFilter() {
     this.books.forEach((bookNode) => {
       this.ren.removeClass(bookNode.nativeElement, 'selected');
-    })
+    });
   }
 
   addBook() {
