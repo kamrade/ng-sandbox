@@ -10,6 +10,7 @@ import { PatternsAndTechnicsPageComponent } from './patterns-and-technics-page/p
 import { ChangeDetectionStrategiesComponent } from './change-detection-strategies/change-detection-strategies.component';
 import { StudentCardComponent } from './change-detection-strategies/student-card/student-card.component';
 import { CourseCardComponent } from './change-detection-strategies/course-card/course-card.component';
+import { EncounterComponent } from './change-detection-strategies/encounter/encounter.component';
 
 const routes: Routes = [{
   path: '',
@@ -32,6 +33,6 @@ const routes: Routes = [{
     SharedComponentsModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [PatternsAndTechnicsPageComponent, ChangeDetectionStrategiesComponent, StudentCardComponent, CourseCardComponent]
+  declarations: [PatternsAndTechnicsPageComponent, ChangeDetectionStrategiesComponent, StudentCardComponent, CourseCardComponent, EncounterComponent]
 })
 export class PatternsAndTechnicsModule { }
