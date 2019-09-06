@@ -18,7 +18,6 @@ export class StudentCardComponent implements OnInit {
     return true;
   }
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
 }

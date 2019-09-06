@@ -8,10 +8,12 @@ import { Course } from './course.model';
 })
 export class ChangeDetectionStrategiesComponent {
 
+  teachersName = 'Leo Burns';
+
   course: Course = {
     title: 'Angular',
     description: 'Develop with Angular',
-    teacher: 'Leo Burns'
+    teacher: `${this.teachersName}`
   }
 
   updateCourseLink() {
@@ -20,7 +22,7 @@ export class ChangeDetectionStrategiesComponent {
   }
 
   changeValue() {
-    this.course.teacher = `Dr. ${this.course.teacher}`;
+    this.course.teacher = `Dr. ${this.teachersName}`;
   }
 
 

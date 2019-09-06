@@ -4,13 +4,17 @@
   <hr/>
 
   <div class="card mb-3">{{course | json}}</div>
+  <label for="course_title">Course title</label>
+  <input id="course_title" class="form-control mb-3" type="text" [(ngModel)]="course.title">
 
-  <input class="form-control mb-3" type="text" [(ngModel)]="course.title">
-  <input class="form-control mb-3" type="text" [(ngModel)]="course.description">
-  <input class="form-control mb-3" type="text" [(ngModel)]="course.teacher">
+  <label for="course_description">Course description</label>
+  <input id="course_description" class="form-control mb-3" type="text" [(ngModel)]="course.description">
 
-  <button class="btn btn-dark btn-set-title mb-3" (click)="updateCourseLink()">Update student card</button>{{''}}
-  <button class="btn btn-light mb-3" (click)="changeValue()">Change detection value</button>
+  <label for="course_teacher">Course teacher</label>
+  <input id="course_teacher" class="form-control mb-3" type="text" [(ngModel)]="course.teacher">
+
+  <button class="btn btn-dark btn-set-title mb-3" (click)="updateCourseLink()">Force update student card</button>{{''}}
+  <button class="btn btn-light mb-3" (click)="changeValue()">Update course teacher</button>
 
   <app-course-card [course]="course"></app-course-card>
   <app-student-card [course]="course"></app-student-card>
