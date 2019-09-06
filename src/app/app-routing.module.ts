@@ -26,6 +26,9 @@ const routes: Routes = [{
   path: 'patterns-and-technics',
   loadChildren: './pages/patterns-and-technics/patterns-and-technics.module#PatternsAndTechnicsModule'
 }, {
+  path: 'using-store',
+  loadChildren: './pages/using-store/using-store.module#UsingStoreModule'
+},{
   path: '**',
   component: NotFoundPageComponent
 }];
