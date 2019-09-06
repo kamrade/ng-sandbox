@@ -14,13 +14,33 @@
   <input id="course_teacher" class="form-control mb-3" type="text" [(ngModel)]="course.teacher">
 
   <button class="btn btn-dark btn-set-title mb-3" (click)="updateCourseLink()">Force update student card</button>{{''}}
-  <button class="btn btn-light mb-3" (click)="changeValue()">Update course teacher</button>
+  <button class="btn btn-light mb-3" (click)="changeValue()">Update course information</button>
 
   <app-course-card [course]="course"></app-course-card>
   <app-student-card [course]="course"></app-student-card>
 
   <hr />
 
-  <app-encounter></app-encounter>
+  <app-push-card name="root">
+    <app-push-card name="branch-1">
+      <app-push-card name="branch-1-1"></app-push-card>
+      <app-push-card name="branch-1-2">
+        <app-push-card name="branch-1-2-1"></app-push-card>
+      </app-push-card>
+    </app-push-card>
+    <app-push-card name="branch-2"></app-push-card>
+    <app-push-card name="branch-3">
+      <app-push-card name="branch-3-1"></app-push-card>
+      <app-push-card name="branch-3-2"></app-push-card>
+    </app-push-card>
+  </app-push-card>
+
+  <div class="pt-3">
+    <button
+      class="btn btn-dark btn-set-title mb-3"
+      >Click</button>{{''}}
+    <button class="btn btn-light btn-set-title mb-3">Timer</button>{{''}}
+    <button class="btn btn-light btn-set-title mb-3">XHR</button>{{''}}
+  </div>
 
 </div>

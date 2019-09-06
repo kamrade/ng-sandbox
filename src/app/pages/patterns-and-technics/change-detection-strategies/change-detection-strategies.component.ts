@@ -17,12 +17,14 @@ export class ChangeDetectionStrategiesComponent {
   }
 
   updateCourseLink() {
-    let newCourse: Course = { ...this.course };
+    const newCourse: Course = { ...this.course };
     this.course = newCourse;
   }
 
   changeValue() {
-    this.course.teacher = `Dr. ${this.teachersName}`;
+    this.course.title = 'React';
+    this.course.teacher = 'Daiv Richardson';
+    this.course.description = 'Advanced React';
   }
 
 

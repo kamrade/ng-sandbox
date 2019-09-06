@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { EncounterComponent } from './encounter.component';
+import { PushCardComponent } from './push-card.component';
 
-describe('EncounterComponent', () => {
-  let component: EncounterComponent;
-  let fixture: ComponentFixture<EncounterComponent>;
+describe('PushCardComponent', () => {
+  let component: PushCardComponent;
+  let fixture: ComponentFixture<PushCardComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ EncounterComponent ]
+      declarations: [ PushCardComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(EncounterComponent);
+    fixture = TestBed.createComponent(PushCardComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

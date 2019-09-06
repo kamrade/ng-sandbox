@@ -1,0 +1,11 @@
+@import '~src/assets/scss/bootstrap/variables';
+
+.push-card {
+  padding: 20px;
+  border: 2px solid $gray-200;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  .title {
+    margin-bottom: 10px;
+  }
+}
