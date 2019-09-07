@@ -12,9 +12,9 @@ app.use(bodyParser.json());
 app.use(cors());
 
 // Routes
-app.use('/students', require('./routes/students'));
-app.use('/teachers', require('./routes/teachers'));
-app.use('/subjects', require('./routes/subjects'));
+app.use('/api/students', require('./routes/students'));
+app.use('/api/teachers', require('./routes/teachers'));
+app.use('/api/subjects', require('./routes/subjects'));
 
 // Server
 const PORT = process.env.PORT || 2000;

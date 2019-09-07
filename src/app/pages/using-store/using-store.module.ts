@@ -1,7 +1,10 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
 import { SharedComponentsModule } from 'src/app/shared-components/shared-components.module';
+
+import { StudentsService, SubjectsService, TeachersService  } from './services';
 
 import { UsingStorePageComponent } from './using-store-page/using-store-page.component';
 import { StudentsListComponent } from './students-list/students-list.component';
@@ -32,7 +35,11 @@ const routes: Routes = [{
   imports: [
     CommonModule,
     SharedComponentsModule,
+    HttpClientModule,
     RouterModule.forChild(routes),
+  ],
+  providers: [
+    StudentsService, SubjectsService, TeachersService
   ],
   declarations: [
     UsingStorePageComponent,

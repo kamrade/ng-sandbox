@@ -1,17 +1,19 @@
 import { Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs';
+import { Observable } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
 
 import { Subject } from '../models/subject.model';
-import { SUBJECTS } from '../data/subjects-mock-data';
 
 @Injectable({
   providedIn: 'root'
 })
 export class SubjectsService {
 
-  constructor() { }
+  private subjectsUrl = 'http://localhost:2000/api/subjects';
+
+  constructor(private http: HttpClient) {}
 
   getSubjects(): Observable<Subject[]> {
-    return of(SUBJECTS);
+    return this.http.get<Subject[]>(this.subjectsUrl);
   }
 }

@@ -1,3 +1,5 @@
-<p>
-  subjects-list works!
-</p>
+<app-form-title>Subjects List</app-form-title>
+
+<div class="subjects-list">
+  <div class="subject" *ngFor="let subject of subjects">{{subject.title}}</div>
+</div>

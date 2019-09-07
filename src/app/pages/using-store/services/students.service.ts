@@ -1,17 +1,19 @@
 import { Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs';
+import { Observable } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
 
 import { Student } from '../models/student.model';
-import { STUDENTS } from '../data/students-mock-data';
 
 @Injectable({
   providedIn: 'root'
 })
 export class StudentsService {
 
-  constructor() { }
+  private studentsUrl = 'http://localhost:2000/api/students';
+
+  constructor(private http: HttpClient) {}
 
   getStudents(): Observable<Student[]>  {
-    return of(STUDENTS);
+    return this.http.get<Student[]>(this.studentsUrl);
   }
 }

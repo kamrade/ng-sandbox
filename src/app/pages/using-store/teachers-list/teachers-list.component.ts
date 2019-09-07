@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { TeachersService } from '../services';
-import { Teacher } from '../models/student.model';
+import { Teacher } from '../models/teacher.model';
 
 @Component({
   selector: 'app-teachers-list',
@@ -16,7 +16,6 @@ export class TeachersListComponent implements OnInit {
 
   ngOnInit() {
     this.getTeachers();
-    console.log(this.teachers);
   }
 
   getTeachers(): void {
