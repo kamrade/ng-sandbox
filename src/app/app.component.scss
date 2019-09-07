@@ -7,6 +7,7 @@
   padding-bottom: $spacer;
   display: flex;
   justify-content: space-around;
+  position: relative;
 
   @include media-max-width(md) {
     padding: $spacer/2 $spacer;
@@ -14,6 +15,7 @@
 
   .navigation-container {
     position: relative;
+    height: calc(100vh - 80px);
     overflow-Y: scroll;
 
 
@@ -45,6 +47,7 @@
     position: relative;
     flex-grow: 1;
     padding-top: 20px;
+    width: calc(100% - 300px);
   }
 
   .additional-sidebar {
