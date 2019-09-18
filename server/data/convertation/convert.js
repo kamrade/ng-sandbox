@@ -23,7 +23,7 @@ fs.writeFile('students-converted.json', studentsConvertedJSON, 'utf8', () => {
 });
 
 const convertedTeachers = rawDataTeachers.map((teacher, i) => {
-  teacher.subject = rawDataSubjects[ getRandom(0, rawDataSubjects.length - 1) ];
+  teacher.subject = rawDataSubjects[ getRandom(0, rawDataSubjects.length - 1) ].id;
   return teacher;
 })
 
