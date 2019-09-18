@@ -1,7 +1,7 @@
 const getRandom = require('./get-random');
 const arrayHasThisValue = require('./array-has-this-value');
 
-// Get N random numbers from array of L
+// Get N unique random numbers from array of L
 module.exports = function getRandomNumbers(indexCount, maxIndex) {
 
   let randomIndexesArray = [];
